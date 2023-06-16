@@ -2,7 +2,7 @@
 Reverse-Array
 
 ## Whiteboard Process
-![Whitebord](data-structures-and-algorithms/Code-Challenge-1/White-bord-Algo.jpg)
+![Whitebord](White-bord-Algo.jpg)
 
 ## Approach & Efficiency
 **Algorithm**
