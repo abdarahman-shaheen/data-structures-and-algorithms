@@ -1,5 +1,4 @@
-# Challenge Title
-Reverse-Array
+# Reverse-Array
 
 ## Whiteboard Process
 ![Whitebord](White-bord-Algo.jpg)
