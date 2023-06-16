@@ -7,4 +7,4 @@
   with elements in reversed order.
  - ## Test
    
-  - ![unit-test](data-structures-and-algorithms/Code-Challenge-1/test-ReverseArray.png)
+   ![unit-test](data-structures-and-algorithms/Code-Challenge-1/test-ReverseArray.png)
