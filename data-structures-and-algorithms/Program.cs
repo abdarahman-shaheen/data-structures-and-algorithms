@@ -1,10 +1,10 @@
 ﻿namespace data_structures_and_algorithms
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            /*
+            
             int[] array = new int[] {1,2,3,4,5};
 
             int[] reverseArrat=Reverse(array);
@@ -13,9 +13,9 @@
             {
                 Console.WriteLine(reverseArrat[i]);
             }
-            */
+            
         }
-        /*public static int[] Reverse(int[] array)
+        public static int[] Reverse(int[] array)
         {
             if (array.Length<0 || array==null)
             {
@@ -34,7 +34,7 @@
                 return newArray;
             }
             
-        }*/
+        }
     }
     
 }
