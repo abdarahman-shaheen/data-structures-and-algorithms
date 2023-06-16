@@ -11,4 +11,4 @@ Reverse-Array
 3- Create a variable size for new array.
 4- Iterate on a new array with start a list index of a origin array.
 ## Solution
-![Whitebord](data-structures-and-algorithms/Code-Challenge-1/White-bord-Code.jpg)
+![Whitebord](White-bord-Code.jpg)
