@@ -36,40 +36,35 @@
             }
             
         }
-
+ 
         public static int[] InsertShiftArray(int[] array,int value) {
-        
-        int[] newArray = new int[array.Length+1];
-            int medindex = array.Length/2;
-
-            for (int i = 0,j=0; i <= array.Length; i++,j++)
+            if (array.Length < 0 || array == null)
             {
-                if (i == medindex)
-                {
-                    newArray[i]= value;
-                    j--;
-                }
-                else
-                {
-                    newArray[i] = array[j];
-                }
+                throw new ArgumentNullException("array is null");
 
             }
-            for (int i = 0, j = 0; i <= array.Length; i++, j++)
+            else
             {
-                if (i == medindex)
+                int[] newArray = new int[array.Length + 1];
+                int medindex = array.Length / 2;
+
+                for (int i = 0, j = 0; i <= array.Length; i++, j++)
                 {
-                    newArray[i] = value;
-                    j--;
+                    if (i == medindex)
+                    {
+                        newArray[i] = value;
+                        j--;
+                    }
+                    else
+                    {
+                        newArray[i] = array[j];
+                    }
+
                 }
-                else
-                {
-                    newArray[i] = array[j];
-                }
+                return newArray;
+
             }
 
-            return newArray;
-            return newArray;
 
         }
     }
