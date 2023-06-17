@@ -1,7 +1,7 @@
 # Array-insert-shift
 
 ## Whiteboard Process
-![Whitebord](White-bord-Algo.jpg)
+![Whitebord](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-Challenge-2/White-bord-2.jpg)
 
 ## Approach & Efficiency
 **Algorithm**
