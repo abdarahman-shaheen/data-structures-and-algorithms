@@ -11,4 +11,4 @@
 4. Iterate on the array used 2 variable.
 5. when the length of array reaches half add the number that we need to added .
 ## Solution
-![Whitebord](White-bord-Code.jpg)
+![Whitebord](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-Challenge-2/White-Bord-Code2.jpg)
