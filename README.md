@@ -9,5 +9,5 @@
   Write a function called insertShiftArray which takes in an array and a value to be added. Without utilizing any of the built-in methods available to your language, 
   return an array with the new value added at the middle index.
 
- ## 3. [Challenge3 (Binary Search)](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-Challenge-3/README.md)
+ ## 3. [Challenge3 (Binary Search)](data-structures-and-algorithms/Code-Challenge-3/README.md)
 
