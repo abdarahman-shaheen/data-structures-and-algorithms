@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            
+            /*
             int[] array = new int[] {1,2,3,4,5};
             int valuAdded = 7;
 
@@ -14,7 +14,12 @@
             {
                 Console.WriteLine(reverseArrat[i]);
             }
-            
+            */
+
+            int[] arr = { -131, -82, 0, 27, 42, 68, 179 };
+            int key = 42;
+            Console.WriteLine(BinarySearch(arr, key));
+
         }
         public static int[] Reverse(int[] array)
         {
@@ -66,6 +71,31 @@
             }
 
 
+        }
+        public static int BinarySearch(int[] arr, int key)
+        {
+            int h = arr.Length - 1;
+            int l = 0;
+            while (l <= h)
+            {
+                int m = (l + h) / 2;
+
+                if (arr[m] == key)
+                {
+                    return m;
+                }
+                else
+                {
+                    if (key > arr[m])
+                        l = m + 1;
+                    else
+                    {
+                        h = m - 1;
+                    }
+                }
+
+            }
+            return -1;
         }
     }
     
