@@ -1,4 +1,5 @@
-﻿namespace data_structures_and_algorithms
+﻿
+namespace data_structures_and_algorithms
 {
     public class Program
     {
@@ -14,12 +15,22 @@
             {
                 Console.WriteLine(reverseArrat[i]);
             }
-            */
+            
 
             int[] arr = { -131, -82, 0, 27, 42, 68, 179 };
             int key = 42;
             Console.WriteLine(BinarySearch(arr, key));
+*/
+            Linked_List l1 = new Linked_List();
+          //  l1.InsertFirst(15);
+          //  l1.InsertFirst(50);
+          //  l1.InsertFirst(33);
+          //  l1.InsertLast(44);
+//l1.InsertLast(77);
+          //  l1.InsertPosition(1, 20);
+// l1.SerchNode(20);
 
+            Console.WriteLine(l1.PrintList()); 
         }
         public static int[] Reverse(int[] array)
         {
@@ -98,5 +109,6 @@
             return -1;
         }
     }
+    
     
 }
