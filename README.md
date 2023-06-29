@@ -16,4 +16,24 @@ NOTE: The search algorithm used in your function should be a binary search.
 Check the Resources section for details
 
 ## 4. [Challenge5 (Linked-List)](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-5/README.md)
+- Features
+Node
+Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
+Linked List
+Create a Linked List class
+Within your Linked List class, include a head property.
+Upon instantiation, an empty Linked List should be created.
+The class should contain the following methods
+insert
+Arguments: value
+Returns: nothing
+Adds a new node with that value to the head of the list with an O(1) Time performance.
+includes
+Arguments: value
+Returns: Boolean
+Indicates whether that value exists as a Node’s value somewhere within the list.
+to string
+Arguments: none
+Returns: a string representing all the values in the Linked List, formatted as:
+"{ a } -> { b } -> { c } -> NULL"
 
