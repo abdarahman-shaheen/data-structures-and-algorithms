@@ -1,4 +1,4 @@
-# Binary Search
+# Linked list
 
 ## Approach & Efficiency
 **Algorithm**
