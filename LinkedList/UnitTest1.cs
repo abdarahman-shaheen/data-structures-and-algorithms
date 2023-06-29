@@ -76,7 +76,7 @@ namespace LinkedList
             linkedList.InsertLast(20);
             linkedList.InsertPosition(1, 15);
 
-            string expected = "{10} => {15} => {20} => NULL";
+            string expected = "Linked List :{10}=>{15}=>{20}=>NUll";
             Assert.Equal(expected, linkedList.PrintList());
         }
 
