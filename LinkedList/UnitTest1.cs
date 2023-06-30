@@ -15,7 +15,7 @@ namespace LinkedList
         }
 
         [Fact]
-        public void InsertNodeToLinkedList()
+        public void InsertNodeToFirstLinkedList()
         { 
             Linked_List linkedList = new Linked_List();
             linkedList.InsertFirst(10);
@@ -46,6 +46,29 @@ namespace LinkedList
             Assert.Equal(10, linkedList.Head.Item);
             Assert.Equal(15, linkedList.Head.Next.Item);
             Assert.Equal(20, linkedList.tail.Item);
+        }
+        [Fact]
+        public void InsertlastNodeinLinkedList()
+        {
+            Linked_List linkedList = new Linked_List();
+            linkedList.InsertFirst(10);
+            linkedList.InsertLast(20);
+            linkedList.InsertLast(30);
+            Assert.Equal(10, linkedList.Head.Item);
+            Assert.Equal(20, linkedList.Head.Next.Item);
+            Assert.Equal(30, linkedList.tail.Item);
+        }
+        [Fact]
+        public void InsertNodeinPostionInLinkedList()
+        {
+            Linked_List linkedList = new Linked_List();
+            linkedList.InsertFirst(10);
+            linkedList.InsertLast(20);
+            linkedList.InsertLast(30);
+            linkedList.InsertPosition(1, 50);
+            Assert.Equal(10, linkedList.Head.Item);
+            Assert.Equal(50, linkedList.Head.Next.Item);
+            Assert.Equal(30, linkedList.tail.Item);
         }
         [Fact]
         public void SearcNodeinLinkedList()
