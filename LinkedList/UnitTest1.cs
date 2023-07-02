@@ -1,4 +1,3 @@
-
 using data_structures_and_algorithms;
 
 namespace LinkedList
@@ -91,6 +90,7 @@ namespace LinkedList
 
             Assert.False(linkedList.SerchNode(25));
         }
+
         [Fact]
         public void allValueInLinkedList()
         {
@@ -101,6 +101,49 @@ namespace LinkedList
 
             string expected = "Linked List :{10}=>{15}=>{20}=>NUll";
             Assert.Equal(expected, linkedList.PrintList());
+        }
+
+        [Fact]
+        public void kGreaterThanLengthLinkedList()
+        {
+            Linked_List l1 = new Linked_List();
+            l1.InsertFirst(2);
+            l1.InsertFirst(8);
+            l1.InsertFirst(3);
+            l1.InsertFirst(1);
+            Assert.Equal("out of range", l1.SerchTailNode(6));
+        }
+        [Fact]
+        public void kSameLengthLinkedList()
+        {
+            Linked_List l1 = new Linked_List();
+            l1.InsertFirst(2);
+            l1.InsertFirst(8);
+            l1.InsertFirst(3);
+            l1.InsertFirst(1);
+            
+            Assert.Equal("1", l1.SerchTailNode(l1.Length-1));
+        }
+
+        [Fact]
+        public void kIsNegativeLinkedList()
+        {
+            Linked_List l1 = new Linked_List();
+            l1.InsertFirst(2);
+            l1.InsertFirst(8);
+            l1.InsertFirst(3);
+            l1.InsertFirst(1);
+
+            Assert.Equal("negative number", l1.SerchTailNode(-1));
+        }
+        [Fact]
+        public void SizeLinkedListisOne()
+        {
+            Linked_List l1 = new Linked_List();
+            l1.InsertFirst(2);
+          
+
+            Assert.Equal("2", l1.SerchTailNode(0));
         }
 
 

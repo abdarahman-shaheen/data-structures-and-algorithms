@@ -10,10 +10,12 @@ namespace data_structures_and_algorithms
     {
         public int Item { get; set; }
         public Node Next { get; set; }
+        public Node Previse { get; set; }
 
         public Node(int item) {
-        Item = item;
+            Item = item;
             Next = null;
+            Previse = null;
         }
     }
     public class Linked_List
@@ -21,7 +23,7 @@ namespace data_structures_and_algorithms
         public Node Head { get; set; }
         public Node tail { get; set; }
 
-        int Length = 0;
+       public int Length = 0;
         public Linked_List()
         {
             Head = null;
@@ -35,13 +37,14 @@ namespace data_structures_and_algorithms
                 Head = newNode;
                 tail = newNode;
                 newNode.Next = null;
+                newNode.Previse = null;
 
             }
             else
-            {
+            {   
+                Head.Previse = newNode;
                 newNode.Next = Head;
                 Head = newNode;
-
             }
             Length++;
 
@@ -55,14 +58,15 @@ namespace data_structures_and_algorithms
                 Head = newNode;
                 tail = newNode;
                 newNode.Next = null;
+                newNode.Previse = null;
 
             }
             else
             {
+                newNode.Previse = tail;
                 tail.Next = newNode;
                 tail = newNode;
                 newNode.Next = null;
-
             }
             Length++;
 
@@ -87,6 +91,7 @@ namespace data_structures_and_algorithms
                 {
                     current = current.Next;
                 }
+                newNode.Previse = current;
                 newNode.Next = current.Next;
                 current.Next = newNode;
             }
@@ -123,6 +128,46 @@ namespace data_structures_and_algorithms
             Console.WriteLine($"the value {item} is Not exsiting in linked list");
 
             return false;
+
+        }
+        public string SerchTailNode(int k)
+        {
+            Node curr = tail;
+
+            try
+            {
+                if (k < 0)
+                {
+                    return "negative number";
+                }
+                if (k == 0)
+                {
+                    return $"{curr.Item}";
+
+
+                }
+                while (k > 0)
+                {
+
+                    curr = curr.Previse;
+
+
+                    k--;
+                }
+                return $"{curr.Item}";
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return "out of range";
+            }
+
+
+            
+           
+
+            
+
 
         }
     }
