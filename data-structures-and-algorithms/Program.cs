@@ -22,18 +22,29 @@ namespace data_structures_and_algorithms
             Console.WriteLine(BinarySearch(arr, key));
 */
             Linked_List l1 = new Linked_List();
-            l1.InsertFirst(15);
-           l1.InsertFirst(50);
-           
-            l1.InsertPosition(1, 20);
-            l1.InsertLast(22);
-            l1.InsertLast(33);
+            //   l1.InsertFirst(15);
+            // l1.InsertFirst(50);
+
+            //  l1.InsertPosition(1, 20);
+            //  l1.InsertLast(22);
+            ///l1.InsertLast(33);
             //  l1.InsertFirst(33);
             //  l1.InsertLast(44);
             //l1.InsertLast(77);
             //  l1.InsertPosition(1, 20);
             // l1.SerchNode(20);
+            l1.InsertFirst(2);
+l1.InsertFirst(8);
+           l1.InsertFirst(3);
+            l1.InsertFirst(1);
+            
 
+
+           //Console.WriteLine(l1.Head.Item);
+            //Console.WriteLine(l1.tail.Item);
+           // Console.WriteLine(l1.tail.Item);
+           
+            Console.WriteLine(l1.SerchTailNode(0));
             Console.WriteLine(l1.PrintList()); 
         }
         public static int[] Reverse(int[] array)
