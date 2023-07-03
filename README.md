@@ -50,7 +50,7 @@ insert after
 arguments: value, new value
 adds a new node with the given new value immediately after the first node that has the value specified
 
-## 6. [Challenge7 (Linked-List-Search)]()
+## 6. [Challenge7 (Linked-List-Search)](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-7/README.md)
 - Features
 -  Write the following method for the Linked List class:
 kth from end
