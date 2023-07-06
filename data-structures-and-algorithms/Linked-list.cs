@@ -23,7 +23,7 @@ namespace data_structures_and_algorithms
         public Node Head { get; set; }
         public Node tail { get; set; }
 
-       public int Length = 0;
+        public int Length = 0;
         public Linked_List()
         {
             Head = null;
@@ -32,7 +32,7 @@ namespace data_structures_and_algorithms
         public void InsertFirst(int item)
         {
             Node newNode = new Node(item);
-            if(Length == 0)
+            if (Length == 0)
             {
                 Head = newNode;
                 tail = newNode;
@@ -41,7 +41,7 @@ namespace data_structures_and_algorithms
 
             }
             else
-            {   
+            {
                 Head.Previse = newNode;
                 newNode.Next = Head;
                 Head = newNode;
@@ -72,7 +72,7 @@ namespace data_structures_and_algorithms
 
 
         }
-        public void InsertPosition(int pos,int item)
+        public void InsertPosition(int pos, int item)
         {
             Node newNode = new Node(item);
             if (pos == 0)
@@ -80,14 +80,14 @@ namespace data_structures_and_algorithms
                 InsertFirst(item);
 
             }
-            else if (pos==Length)
+            else if (pos == Length)
             {
                 InsertLast(item);
             }
             else
             {
                 Node current = Head;
-                for(int i = 1;i<pos;i++)
+                for (int i = 1; i < pos; i++)
                 {
                     current = current.Next;
                 }
@@ -96,21 +96,19 @@ namespace data_structures_and_algorithms
                 current.Next = newNode;
             }
             Length++;
-
-
         }
-      
+
         public string PrintList()
         {
-            string nodes="";
+            string nodes = "";
             Node curr = Head;
-          while(curr != null)
+            while (curr != null)
             {
-                nodes +="{"+ curr.Item.ToString()+"}=>";
-                curr=curr.Next;
+                nodes += "{" + curr.Item.ToString() + "}=>";
+                curr = curr.Next;
             }
-          nodes += "NUll";
-          return "Linked List :"+nodes;
+            nodes += "NUll";
+            return "Linked List :" + nodes;
 
         }
         public bool SerchNode(int item)
@@ -121,8 +119,9 @@ namespace data_structures_and_algorithms
                 if (curr.Item == item)
                 {
                     Console.WriteLine($"the value {item} is exsiting in linked list");
-                    return true; }    
-                    
+                    return true;
+                }
+
                 curr = curr.Next;
             }
             Console.WriteLine($"the value {item} is Not exsiting in linked list");
@@ -161,16 +160,37 @@ namespace data_structures_and_algorithms
                 Console.WriteLine(e.Message);
                 return "out of range";
             }
+        }
+        public static Linked_List zipList(Linked_List list1, Linked_List list2)
+        {
+            Node pointer1 = list1.Head;
+            Node pointer2 = list2.Head;
 
+            Linked_List list3 = new Linked_List();
 
-            
-           
+            while (pointer1 != null || pointer2 != null)
+            {
+                if (pointer1 != null)
+                {
+                    list3.InsertLast(pointer1.Item);
+                    pointer1 = pointer1.Next;
+                }
 
-            
+                if (pointer2 != null)
+                {
+                    list3.InsertLast(pointer2.Item);
+                    pointer2 = pointer2.Next;
+                }
+
+            }
+            return list3;
+
 
 
         }
+
+
+
+
     }
-    
-  
 }
