@@ -2,7 +2,6 @@
 
 ## Approach & Efficiency
 **Algorithm**
-Algorithm
 
 1. Create a new empty linked list to store the zipped list.
 2. Check if either of the input linked lists is empty. If one of them is empty, return the non-empty list as the zipped list.
