@@ -18,4 +18,4 @@ If pointer2 is not null, append the remaining nodes from list 2 to the zipped li
 7. Return the zipped list.
 
 ![white](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-8/Linked-list-Zip.jpg)
-![test](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-6/Linked-list-insertion.png)
+![test](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-8/Linked-list-zip.png)
