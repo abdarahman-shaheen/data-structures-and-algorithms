@@ -15,4 +15,4 @@
  -If the loop completes without finding a mismatched pair of nodes, print "the linked list is NOT a palindrome" and return false.
 
 ![white](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-9/Linked-list-palindrom.jpg)
-![test](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-6/Linked-list-insertion.png)
+![test](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-9/LinkedListPalindromeTest.png)
