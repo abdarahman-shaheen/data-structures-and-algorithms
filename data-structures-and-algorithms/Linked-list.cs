@@ -9,11 +9,19 @@ namespace data_structures_and_algorithms
     public class Node
     {
         public int Item { get; set; }
+        public string Value { get; set; }
         public Node Next { get; set; }
         public Node Previse { get; set; }
 
-        public Node(int item) {
+        public Node(int item)
+        {
             Item = item;
+            Next = null;
+            Previse = null;
+        }
+        public Node(string item)
+        {
+            Value = item;
             Next = null;
             Previse = null;
         }
@@ -32,6 +40,27 @@ namespace data_structures_and_algorithms
         public void InsertFirst(int item)
         {
             Node newNode = new Node(item);
+            if (Length == 0)
+            {
+                Head = newNode;
+                tail = newNode;
+                newNode.Next = null;
+                newNode.Previse = null;
+
+            }
+            else
+            {
+                Head.Previse = newNode;
+                newNode.Next = Head;
+                Head = newNode;
+            }
+            Length++;
+
+
+        }
+        public void InsertFirstString(string value)
+        {
+            Node newNode = new Node(value);
             if (Length == 0)
             {
                 Head = newNode;
@@ -111,6 +140,19 @@ namespace data_structures_and_algorithms
             return "Linked List :" + nodes;
 
         }
+        public string PrintListString()
+        {
+            string nodes = "";
+            Node curr = Head;
+            while (curr != null)
+            {
+                nodes += "{" + curr.Value + "}=>";
+                curr = curr.Next;
+            }
+            nodes += "NUll";
+            return "Linked List :" + nodes;
+
+        }
         public bool SerchNode(int item)
         {
             Node curr = Head;
@@ -181,16 +223,34 @@ namespace data_structures_and_algorithms
                     list3.InsertLast(pointer2.Item);
                     pointer2 = pointer2.Next;
                 }
-
             }
             return list3;
-
-
-
         }
 
+        public static bool LinkedPindromd(Linked_List l1)
+        {
+            Node First = l1.Head;
+            Node Last = l1.tail;
+            int mid = l1.Length / 2;
+            int counter = 0;
 
+            for (int i = 0; i <= mid; i++)
+            {
+                if (First.Value == Last.Value)
+                {
+                    counter++;
 
-
+                    if (counter == mid)
+                    {
+                        Console.WriteLine("the linked list pindrom");
+                        return true;
+                    }
+                    First = First.Next;
+                    Last = Last.Previse;
+                }
+            }
+            Console.WriteLine("the linked list NOT pindrom");
+            return false;
+        }
     }
 }
