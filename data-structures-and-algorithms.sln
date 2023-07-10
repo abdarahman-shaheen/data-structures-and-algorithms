@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestBinarySearch", "TestBin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkedList", "LinkedList\LinkedList.csproj", "{32764759-A48D-41E9-AAFB-ECC6636855F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Linked-List-Zip", "Linked-List-Zip\Linked-List-Zip.csproj", "{725E4254-0378-4AD4-B3F4-0AD604F3A1CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Linked-List-Zip", "Linked-List-Zip\Linked-List-Zip.csproj", "{725E4254-0378-4AD4-B3F4-0AD604F3A1CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedList-palindrome", "LinkedList-palindrome\LinkedList-palindrome.csproj", "{3BD42FE3-03F9-4F9F-8178-AB242E5A8F4B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{725E4254-0378-4AD4-B3F4-0AD604F3A1CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{725E4254-0378-4AD4-B3F4-0AD604F3A1CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{725E4254-0378-4AD4-B3F4-0AD604F3A1CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BD42FE3-03F9-4F9F-8178-AB242E5A8F4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BD42FE3-03F9-4F9F-8178-AB242E5A8F4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BD42FE3-03F9-4F9F-8178-AB242E5A8F4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BD42FE3-03F9-4F9F-8178-AB242E5A8F4B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

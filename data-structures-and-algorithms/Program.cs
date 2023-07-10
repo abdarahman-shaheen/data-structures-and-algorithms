@@ -15,50 +15,52 @@ namespace data_structures_and_algorithms
             {
                 Console.WriteLine(reverseArrat[i]);
             }
-            
-
             int[] arr = { -131, -82, 0, 27, 42, 68, 179 };
             int key = 42;
             Console.WriteLine(BinarySearch(arr, key));
-*/
+
+
             Linked_List l1 = new Linked_List();
             l1.InsertLast(1);
             l1.InsertLast(2);   
             l1.InsertLast(3);
-            
             Linked_List l2 = new Linked_List();
             l2.InsertLast(4);
             l2.InsertLast(5);
             l2.InsertLast(6);
             l2.InsertLast(7);
-                l2.InsertLast(8);
+            l2.InsertLast(8);
             Linked_List l3 = new Linked_List();
             l3 = Linked_List.zipList(l1, l2);
-             Console.WriteLine(l3.PrintList()); 
-            //   l1.InsertFirst(15);
-            // l1.InsertFirst(50);
-            //  l1.InsertPosition(1, 20);
-            //  l1.InsertLast(22);
-            ///l1.InsertLast(33);
-            //  l1.InsertFirst(33);
-            //  l1.InsertLast(44);
+             */
+            Linked_List l4 = new Linked_List();
+            l4.InsertFirstString("m");
+            l4.InsertFirstString("o");
+            l4.InsertFirstString("k");
+            l4.InsertFirstString("k");
+            l4.InsertFirstString("o");
+            l4.InsertFirstString("m");
+            Linked_List.LinkedPindromd(l4);
+            Console.WriteLine(l4.PrintListString());
+            //l1.InsertFirst(15);
+            //l1.InsertFirst(50);
+            //l1.InsertPosition(1, 20);
+            //l1.InsertLast(22);
+            //l1.InsertLast(33);
+            //l1.InsertFirst(33);
+            //l1.InsertLast(44);
             //l1.InsertLast(77);
-            //  l1.InsertPosition(1, 20);
-            // l1.SerchNode(20);
-            //          l1.InsertFirst(2);
+            //l1.InsertPosition(1, 20);
+            //l1.SerchNode(20);
+            //l1.InsertFirst(2);
             //l1.InsertFirst(8);
-            //  l1.InsertFirst(3);
-            // l1.InsertFirst(1);
-
-
-
+            //l1.InsertFirst(3);
+            //l1.InsertFirst(1);
             //Console.WriteLine(l1.Head.Item);
             //Console.WriteLine(l1.tail.Item);
-            // Console.WriteLine(l1.tail.Item);
-
-            // Console.WriteLine(l1.SerchTailNode(0));
-            //   Console.WriteLine(l1.PrintList()); 
-
+            //Console.WriteLine(l1.tail.Item);
+            //Console.WriteLine(l1.SerchTailNode(0));
+            //Console.WriteLine(l1.PrintList()); 
         }
  
         public static int[] Reverse(int[] array)
