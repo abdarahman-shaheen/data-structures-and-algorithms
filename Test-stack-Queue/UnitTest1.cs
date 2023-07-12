@@ -90,7 +90,7 @@ namespace data_structures_and_algorithms;
         [Fact]
         public void EmptyStack()
         {
-              & Act
+              
             Stack stack = new Stack();
 
             
@@ -186,7 +186,7 @@ namespace data_structures_and_algorithms;
         [Fact]
         public void InstantiateEmptyQueue()
         {
-              & Act
+              
             Queue queue = new Queue();
 
             
