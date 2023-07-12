@@ -59,6 +59,15 @@ Return the node’s value that is k places from the tail of the linked list.
 You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
 
 
+
+
+
 ## 7. [Challenge8 (Linked-List-Zip)](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-8/README.md)
 - Features
  domain here is to implement a function called zipLists that takes two linked lists as arguments and returns a new linked list by zipping the two lists together. Zipping the lists means that the nodes from the two input lists will alternate in the resulting list.
+
+
+## 8. [Challenge10 (Stack&&Queue)](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-10/README.md)
+Features
+Using a Linked List as the underlying data storage mechanism, implement both a Stack and a Queue
+
