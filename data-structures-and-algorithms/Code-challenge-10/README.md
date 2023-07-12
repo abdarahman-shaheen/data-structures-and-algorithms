@@ -14,7 +14,7 @@ Queue Algorithms:
 3. Peek: Returns the value of the front element in the queue without modifying the queue structure. It simply accesses the value of the front node.
 4. IsEmpty: Checks if the queue is empty by examining whether the front reference is null.
 
-![white](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-5/Linked-list.jpg)
+![white](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-10/Stack-Queue.jpg)
 ![test](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-6/Linked-list-insertion.png)
 
 
