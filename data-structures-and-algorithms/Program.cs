@@ -32,7 +32,7 @@ namespace data_structures_and_algorithms
             l2.InsertLast(8);
             Linked_List l3 = new Linked_List();
             l3 = Linked_List.zipList(l1, l2);
-             */
+          
             Linked_List l4 = new Linked_List();
             l4.InsertFirstString("m");
             l4.InsertFirstString("o");
@@ -41,7 +41,7 @@ namespace data_structures_and_algorithms
             l4.InsertFirstString("o");
             l4.InsertFirstString("m");
             Linked_List.LinkedPindromd(l4);
-            Console.WriteLine(l4.PrintListString());
+            Console.WriteLine(l4.PrintListString());   */
             //l1.InsertFirst(15);
             //l1.InsertFirst(50);
             //l1.InsertPosition(1, 20);
@@ -61,6 +61,21 @@ namespace data_structures_and_algorithms
             //Console.WriteLine(l1.tail.Item);
             //Console.WriteLine(l1.SerchTailNode(0));
             //Console.WriteLine(l1.PrintList()); 
+                 Stack stack = new Stack();
+                  stack.Push(1);
+                stack.Push(2);
+              stack.Push(3);
+            
+
+
+            Console.WriteLine(stack.Top.Item);
+
+
+            Queue queue = new Queue();
+            queue.Enqueue(1);
+            queue.Enqueue(2);
+            queue.Enqueue(3);
+            
         }
  
         public static int[] Reverse(int[] array)

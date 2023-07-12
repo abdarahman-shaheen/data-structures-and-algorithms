@@ -44,5 +44,5 @@ namespace LinkedList_palindrome
             Assert.False(Linked_List.LinkedPindromd(l4));
         }
     }
-    
+
 }
