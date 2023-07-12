@@ -15,7 +15,7 @@ Queue Algorithms:
 4. IsEmpty: Checks if the queue is empty by examining whether the front reference is null.
 
 ![white](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-10/Stack-Queue.jpg)
-![test](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-6/Linked-list-insertion.png)
+![test](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-10/Test-Stack-Queue.png)
 
 
 13. The `peekValueQueue` is printed to the console, so the output will be `10`.
