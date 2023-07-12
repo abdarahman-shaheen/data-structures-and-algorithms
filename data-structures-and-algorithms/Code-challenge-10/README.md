@@ -1,4 +1,4 @@
-# Linked list
+# Stack && Queue
 
 ## Approach & Efficiency
 **Algorithm**
