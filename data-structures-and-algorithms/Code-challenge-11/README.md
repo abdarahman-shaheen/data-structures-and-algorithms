@@ -27,4 +27,4 @@ Here is the step-by-step breakdown of the algorithm:
    - The order of elements in `stack2` will be reversed, with the second oldest element at the top and the newest element at the bottom.
 
 By using this approach, the algorithm achieves the desired FIFO behavior of a queue using two stacks.
-![white](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-5/Linked-list.jpg)
+![white](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-11/PsudoQueue.jpg)
