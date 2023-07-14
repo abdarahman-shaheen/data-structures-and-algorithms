@@ -61,21 +61,26 @@ namespace data_structures_and_algorithms
             //Console.WriteLine(l1.tail.Item);
             //Console.WriteLine(l1.SerchTailNode(0));
             //Console.WriteLine(l1.PrintList()); 
-                 Stack stack = new Stack();
-                  stack.Push(1);
-                stack.Push(2);
-              stack.Push(3);
-            
+          //     Stack stack = new Stack();
+          //     stack.Push(1);
+            //    stack.Push(2);
+              //  stack.Push(3);
 
+           // stack.Prints();
 
-            Console.WriteLine(stack.Top.Item);
-
-
-            Queue queue = new Queue();
+            //  Queue queue = new Queue();
+            // queue.Enqueue(1);
+            //  queue.Enqueue(2);
+            //  queue.Enqueue(3);
+            PeSudoQueue queue = new PeSudoQueue();
             queue.Enqueue(1);
             queue.Enqueue(2);
             queue.Enqueue(3);
-            
+
+
+            queue.Prints();
+
+
         }
  
         public static int[] Reverse(int[] array)
