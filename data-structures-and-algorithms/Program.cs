@@ -76,11 +76,9 @@ namespace data_structures_and_algorithms
             queue.Enqueue(1);
             queue.Enqueue(2);
             queue.Enqueue(3);
-
-
-            queue.Prints();
-
-
+       
+            Console.WriteLine(queue.Dequeue());
+            
         }
  
         public static int[] Reverse(int[] array)
