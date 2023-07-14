@@ -36,5 +36,15 @@ namespace data_structures_and_algorithms
             }
             return stack2.Pop();
         }
+        public void Prints()
+        {
+            string s = " ";
+            while (stack1.Top != null)
+            {
+                s += $"{stack1.Top.Item}=>";
+                stack1.Top = stack1.Top.Next;
+            }
+            Console.WriteLine(s);
+        }
     }
 }
