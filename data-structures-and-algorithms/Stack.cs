@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace data_structures_and_algorithms
 {
-    public class Stack
+    public class MyStack
     {
         public Node Top { get; set; }
         int Count = 0;
         private string s;
 
-        public Stack()
+        public MyStack()
         {
             Top = null;
         }
