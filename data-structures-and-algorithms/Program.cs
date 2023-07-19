@@ -1,4 +1,6 @@
 ﻿
+using System.Collections;
+
 namespace data_structures_and_algorithms
 {
     public class Program
@@ -61,25 +63,38 @@ namespace data_structures_and_algorithms
             //Console.WriteLine(l1.tail.Item);
             //Console.WriteLine(l1.SerchTailNode(0));
             //Console.WriteLine(l1.PrintList()); 
-          //     Stack stack = new Stack();
-          //     stack.Push(1);
+            //     Stack stack = new Stack();
+            //     stack.Push(1);
             //    stack.Push(2);
-              //  stack.Push(3);
+            //  stack.Push(3);
 
-           // stack.Prints();
+            // stack.Prints();
 
             //  Queue queue = new Queue();
             // queue.Enqueue(1);
             //  queue.Enqueue(2);
             //  queue.Enqueue(3);
-            PeSudoQueue queue = new PeSudoQueue();
-            queue.Enqueue(1);
-            queue.Enqueue(2);
-            queue.Enqueue(3);
-            queue.Prints();            
-           // Console.WriteLine(queue.Dequeue());
+            //  PeSudoQueue queue = new PeSudoQueue();
+            // queue.Enqueue(1);
+            // queue.Enqueue(2);
+            // queue.Enqueue(3);
+            // queue.Prints();            
+            AnimalShelter animalShelter = new AnimalShelter();
+
+            // Enqueue
+            Animal Rex = new Animal() { Species = "dog", Name = "Rex" };
+            Animal Sam = new Animal() { Species = "cat", Name = "Sam" };
+            Console.WriteLine("Add animal");
+            animalShelter.Enqueue(Rex);
+            animalShelter.Enqueue(Sam);
+            animalShelter.PrintCount();
+         
+            Console.WriteLine("Remove animal ");
+            animalShelter.Dequeue(Rex.Species);
+            animalShelter.PrintCount();
+            // Console.WriteLine(queue.Dequeue());
         }
- 
+
         public static int[] Reverse(int[] array)
         {
             if (array.Length<0 || array==null)

@@ -9,12 +9,12 @@ namespace data_structures_and_algorithms
     public class PeSudoQueue
     {
 
-        private Stack stack1;
-        private Stack stack2;
+        private MyStack stack1;
+        private MyStack stack2;
         public PeSudoQueue()
         {
-             stack2 = new Stack();
-             stack1 = new Stack();
+             stack2 = new MyStack();
+             stack1 = new MyStack();
         }
         public void Enqueue(int value)
         {
