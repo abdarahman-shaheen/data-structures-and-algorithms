@@ -30,5 +30,4 @@ Input: A List<Animal> to store the count and names of cats.
 Iterate through the Cats queue and add each cat's name to the List<Animal> 'catAnimal'.
  elements.
 
-![white](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-5/Linked-list.jpg)
-![test](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-6/Linked-list-insertion.png)
+![white](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-12/animal-shilter.jpg)
