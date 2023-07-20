@@ -8,23 +8,20 @@ namespace data_structures_and_algorithms
 {
     public class AnimalShelter
     {
-        private Queue<Animal> dogs;
-        private Queue<Animal> cats;
+        private Queue<Animal> dogsAndCat;
+
+        private Queue<Animal> Test;
 
         public AnimalShelter()
         {
-            dogs = new Queue<Animal>();
-            cats = new Queue<Animal>();
+            dogsAndCat = new Queue<Animal>();
+            Test = new Queue<Animal>();
         }
         public void Enqueue(Animal animal)
         {
-            if (animal.Species == "dog")
+            if (animal.Species == "dog" || animal.Species == "cat")
             {
-                dogs.Enqueue(animal);
-            }
-            else if (animal.Species == "cat")
-            {
-                cats.Enqueue(animal);
+                dogsAndCat.Enqueue(animal);
             }
             else
             {
@@ -33,15 +30,23 @@ namespace data_structures_and_algorithms
         }
         public Animal Dequeue(string pref)
         {
-            if (pref == "dog" && dogs.Count > 0)
+            Queue<Animal> tempQueue = new Queue<Animal>();
+
+            while (dogsAndCat.Count > 0)
             {
-                return dogs.Dequeue();
+                Animal currentAnimal = dogsAndCat.Dequeue();
+
+                if (currentAnimal.Species == pref)
+                {
+                    while (tempQueue.Count > 0)
+                    {
+                        dogsAndCat.Enqueue(tempQueue.Dequeue());
+                    }
+                    return currentAnimal;
+                }
+                tempQueue.Enqueue(currentAnimal);
             }
-            else if (pref == "cat" && cats.Count > 0)
-            {
-                return cats.Dequeue();
-            }
-            else if (pref != "dog" && pref != "cat")
+            if (pref != "dog" && pref != "cat")
             {
                 throw new ArgumentException("Invalid preference. Only 'dog' or 'cat' allowed.");
             }
@@ -49,8 +54,7 @@ namespace data_structures_and_algorithms
         }
         public void PrintCount()
         {
-            Console.WriteLine("the number of dogs is :"+ dogs.Count);
-            Console.WriteLine("the number of cat is :" + cats.Count);
+            Console.WriteLine("the number of dogs and cats is :"+ dogsAndCat.Count);
         }
     }
 

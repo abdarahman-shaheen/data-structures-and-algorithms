@@ -85,8 +85,9 @@ namespace data_structures_and_algorithms
             Animal Rex = new Animal() { Species = "dog", Name = "Rex" };
             Animal Sam = new Animal() { Species = "cat", Name = "Sam" };
             Console.WriteLine("Add animal");
-            animalShelter.Enqueue(Rex);
             animalShelter.Enqueue(Sam);
+            animalShelter.Enqueue(Rex);
+          
             animalShelter.PrintCount();
          
             Console.WriteLine("Remove animal ");
