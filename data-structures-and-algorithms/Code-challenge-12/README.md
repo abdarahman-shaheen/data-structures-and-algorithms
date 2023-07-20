@@ -1,4 +1,4 @@
-# Linked list
+# stack-queue-animal-shelter
 
 ## Approach & Efficiency
 ## ALGORTHM
