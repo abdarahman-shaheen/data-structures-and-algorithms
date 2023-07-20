@@ -85,3 +85,10 @@ dequeue
 Arguments: none
 Extracts a value from the PseudoQueue, using a first-in, first-out approach.
 
+
+## 9. [Challenge12 (stack-queue-animal-shelter)]()
+- Feature
+Feature Tasks
+Create a class called AnimalShelter which holds only dogs and cats.
+The shelter operates using a first-in, first-out approach.
+
