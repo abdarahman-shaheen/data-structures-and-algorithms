@@ -86,7 +86,7 @@ Arguments: none
 Extracts a value from the PseudoQueue, using a first-in, first-out approach.
 
 
-## 9. [Challenge12 (stack-queue-animal-shelter)]()
+## 10. [Challenge12 (stack-queue-animal-shelter)](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-12/README.md)
 - Feature
 Feature Tasks
 Create a class called AnimalShelter which holds only dogs and cats.
