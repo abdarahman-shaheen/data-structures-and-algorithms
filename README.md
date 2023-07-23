@@ -92,3 +92,10 @@ Feature Tasks
 Create a class called AnimalShelter which holds only dogs and cats.
 The shelter operates using a first-in, first-out approach.
 
+## 11. [Challenge13 (stack-Bracket)](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-13/README.md)
+- Feature Tasks
+Write a function called validate brackets
+Arguments: string
+Return: boolean
+representing whether or not the brackets in the string are balanced
+
