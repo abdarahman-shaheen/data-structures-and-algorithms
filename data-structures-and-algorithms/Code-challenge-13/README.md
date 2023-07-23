@@ -1,4 +1,4 @@
-# Linked list
+# Stack-bracket
 
 ## Approach & Efficiency
 **Algorithm**
