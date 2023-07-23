@@ -82,17 +82,18 @@ namespace data_structures_and_algorithms
             AnimalShelter animalShelter = new AnimalShelter();
 
             // Enqueue
-            Animal Rex = new Animal() { Species = "dog", Name = "Rex" };
-            Animal Sam = new Animal() { Species = "cat", Name = "Sam" };
-            Console.WriteLine("Add animal");
-            animalShelter.Enqueue(Sam);
-            animalShelter.Enqueue(Rex);
+        //    Animal Rex = new Animal() { Species = "dog", Name = "Rex" };
+         //   Animal Sam = new Animal() { Species = "cat", Name = "Sam" };
+        //    Console.WriteLine("Add animal");
+         //   animalShelter.Enqueue(Sam);
+         //   animalShelter.Enqueue(Rex);
           
-            animalShelter.PrintCount();
+          //  animalShelter.PrintCount();
          
-            Console.WriteLine("Remove animal ");
-            animalShelter.Dequeue(Rex.Species);
-            animalShelter.PrintCount();
+          //  Console.WriteLine("Remove animal ");
+          //  animalShelter.Dequeue(Rex.Species);
+          //  animalShelter.PrintCount();
+            Console.WriteLine(ValidatorBracket("{(})"));
             // Console.WriteLine(queue.Dequeue());
         }
 
@@ -172,7 +173,47 @@ namespace data_structures_and_algorithms
             }
             return -1;
         }
+
+        public static bool ValidatorBracket(string brackt)
+        {
+            Stack<char> stack = new Stack<char>();
+
+            for (int i = 0; i < brackt.Length; i++)
+            {
+                if (brackt[i] == '{'|| brackt[i] == '('|| brackt[i]=='[')
+                {
+                    stack.Push(brackt[i]);
+                }
+                else if(brackt[i] == '}' || brackt[i] == ')' || brackt[i] == ']')
+                {
+                    if (stack.Count == 0)
+                        return false;
+
+                    char top = stack.Peek();
+                    if (brackt[i] == ')' && top == '(')
+                    {
+                        stack.Pop();
+                    }
+                    else if (brackt[i] == ']' && top == '[')
+                    {
+                        stack.Pop();
+                    }
+                    else if (brackt[i] == '}' && top == '{')
+                    {
+                        stack.Pop();
+                    };
+
+                }
+                
+            }
+            if( stack.Count == 0)
+            {
+               return true;
+            }
+            return false;
+        }
     }
+
     
     
 }

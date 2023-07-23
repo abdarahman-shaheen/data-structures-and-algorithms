@@ -5,96 +5,97 @@ namespace data_structures_and_algorithms;
     public class UnitTest1
     {
         [Fact]
-        public void PushtoStack()
+        public void PushtoMyMyStack()
         {
              
-            Stack stack = new Stack();
+        MyStack MyStack = new MyStack();
+        MyStack = new MyStack();
 
               
-            stack.Push(5);
+            MyStack.Push(5);
 
             
-            Assert.False(stack.isEmpty());
-            Assert.Equal(5, stack.Peek());
+            Assert.False(MyStack.isEmpty());
+            Assert.Equal(5, MyStack.Peek());
         }
 
         [Fact]
-        public void Push_MultipleValuestoStack()
+        public void Push_MultipleValuestoMyStack()
         {
              
-            Stack stack = new Stack();
+            MyStack MyStack = new MyStack();
 
               
-            stack.Push(5);
-            stack.Push(10);
-            stack.Push(15);
+            MyStack.Push(5);
+            MyStack.Push(10);
+            MyStack.Push(15);
 
             
-            Assert.False(stack.isEmpty());
-            Assert.Equal(15, stack.Peek());
+            Assert.False(MyStack.isEmpty());
+            Assert.Equal(15, MyStack.Peek());
         }
 
         [Fact]
-        public void PopStack()
+        public void PopMyStack()
         {
              
-            Stack stack = new Stack();
-            stack.Push(5);
-            stack.Push(10);
-            stack.Push(15);
+            MyStack MyStack = new MyStack();
+            MyStack.Push(5);
+            MyStack.Push(10);
+            MyStack.Push(15);
 
               
-            int result = stack.Pop();
+            int result = MyStack.Pop();
 
             
             Assert.Equal(15, result);
-            Assert.Equal(10, stack.Peek());
+            Assert.Equal(10, MyStack.Peek());
         }
 
         [Fact]
-        public void Pop_EmptyStack_ThrowsException()
+        public void Pop_EmptyMyStack_ThrowsException()
         {
              
-            Stack stack = new Stack();
+            MyStack MyStack = new MyStack();
 
             
-            Assert.Throws<Exception>(() => stack.Pop());
+            Assert.Throws<Exception>(() => MyStack.Pop());
         }
 
         [Fact]
-        public void PeekItemOnStack()
+        public void PeekItemOnMyStack()
         {
              
-            Stack stack = new Stack();
-            stack.Push(5);
-            stack.Push(10);
-            stack.Push(15);
+            MyStack MyStack = new MyStack();
+            MyStack.Push(5);
+            MyStack.Push(10);
+            MyStack.Push(15);
 
               
-            int result = stack.Peek();
+            int result = MyStack.Peek();
 
             
             Assert.Equal(15, result);
         }
 
         [Fact]
-        public void Peek_EmptyStack_ThrowsException()
+        public void Peek_EmptyMyStack_ThrowsException()
         {
              
-            Stack stack = new Stack();
+            MyStack MyStack = new MyStack();
 
             
-            Assert.Throws<Exception>(() => stack.Peek());
+            Assert.Throws<Exception>(() => MyStack.Peek());
         }
 
         [Fact]
-        public void EmptyStack()
+        public void EmptyMyStack()
         {
               
-            Stack stack = new Stack();
+            MyStack MyStack = new MyStack();
 
             
-            Assert.True(stack.isEmpty());
+            Assert.True(MyStack.isEmpty());
         }
     }
 
