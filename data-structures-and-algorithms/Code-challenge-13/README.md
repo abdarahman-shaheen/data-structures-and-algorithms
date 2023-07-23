@@ -13,4 +13,4 @@
    b. If the stack is not empty, return false, indicating that there are unmatched opening brackets in the input.
 
 ![white](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-13/Stack-bracket.jpg)
-![test](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-6/Linked-list-insertion.png)
+![test](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-13/Test-stack-bracket.png)
