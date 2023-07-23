@@ -12,5 +12,5 @@
    a. If the stack is empty, return true, indicating that all brackets are balanced.
    b. If the stack is not empty, return false, indicating that there are unmatched opening brackets in the input.
 
-![white](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-5/Linked-list.jpg)
+![white](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-13/Stack-bracket.jpg)
 ![test](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-6/Linked-list-insertion.png)
