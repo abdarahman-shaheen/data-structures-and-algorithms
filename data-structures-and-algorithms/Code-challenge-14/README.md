@@ -9,7 +9,7 @@ Finally, the code checks if certain values (40 and 90) exist in the tree using t
 
 ## whiteboard:
 
-![white]([white.png](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-14/SearchTree.jpg)
+![white](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-14/SearchTree.jpg)
 
 ## walkthrough :
 
