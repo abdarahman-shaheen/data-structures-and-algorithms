@@ -1,4 +1,4 @@
-# challenge (15) :tree
+# Tree
 ## explanation
 The code defines a Node class to represent each node in the Binary Search Tree.
 It also defines a BinaryTree class with methods for pre-order, in-order, and post-order traversals.
