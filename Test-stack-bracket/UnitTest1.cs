@@ -13,7 +13,6 @@ namespace Test_stack_bracket
             
             bool isValid = Program.ValidatorBracket(input);
 
-            
             Assert.True(isValid);
         }
 

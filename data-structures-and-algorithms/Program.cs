@@ -82,19 +82,45 @@ namespace data_structures_and_algorithms
             AnimalShelter animalShelter = new AnimalShelter();
 
             // Enqueue
-        //    Animal Rex = new Animal() { Species = "dog", Name = "Rex" };
-         //   Animal Sam = new Animal() { Species = "cat", Name = "Sam" };
-        //    Console.WriteLine("Add animal");
-         //   animalShelter.Enqueue(Sam);
-         //   animalShelter.Enqueue(Rex);
-          
-          //  animalShelter.PrintCount();
-         
-          //  Console.WriteLine("Remove animal ");
-          //  animalShelter.Dequeue(Rex.Species);
-          //  animalShelter.PrintCount();
-            Console.WriteLine(ValidatorBracket("{(})"));
+            //    Animal Rex = new Animal() { Species = "dog", Name = "Rex" };
+            //   Animal Sam = new Animal() { Species = "cat", Name = "Sam" };
+            //    Console.WriteLine("Add animal");
+            //   animalShelter.Enqueue(Sam);
+            //   animalShelter.Enqueue(Rex);
+
+            //  animalShelter.PrintCount();
+
+            //  Console.WriteLine("Remove animal ");
+            //  animalShelter.Dequeue(Rex.Species);
+            //  animalShelter.PrintCount();
+            //Console.WriteLine(ValidatorBracket("{(})"));
             // Console.WriteLine(queue.Dequeue());
+            //     char[] charArray = { 'A', 'B', 'C', 'D' ,'E'};
+            //  Console.WriteLine(DuckGosse(charArray, 3)); 
+
+            BinarySearchTree<int> binarySeartchTree = new BinarySearchTree<int>();
+
+            binarySeartchTree.Add(20);
+            binarySeartchTree.Add(30);
+            binarySeartchTree.Add(50);
+            binarySeartchTree.Add(25);
+            binarySeartchTree.Add(40);
+            binarySeartchTree.Add(60);
+            binarySeartchTree.Add(80);
+
+
+            Console.WriteLine("Pre-Order Traversal");
+
+            string resultString = string.Join(",", binarySeartchTree.PreOrderTravarsel());
+            Console.WriteLine(resultString);
+
+
+            Console.WriteLine("In-order Traversal");
+            Console.WriteLine(string.Join(", ", binarySeartchTree.InorderTraversal()));
+
+            Console.WriteLine("Post-order Traversal");
+            Console.WriteLine(string.Join(", ", binarySeartchTree.PostorderTraversal()));
+
         }
 
         public static int[] Reverse(int[] array)
@@ -212,7 +238,63 @@ namespace data_structures_and_algorithms
             }
             return false;
         }
-    }
+
+        public static char DuckGosse(char[] chars,int k)
+        {
+            Queue<char> queue = new Queue<char>();
+            Queue<char> Temp = new Queue<char>();
+
+            for (int i = 0; i < chars.Length; i++)
+            {
+                queue.Enqueue(chars[i]);
+            }
+            while(queue.Count!=0)
+            {
+                if (queue.Count == 1)
+                {
+                    return queue.Dequeue();
+                }
+
+                for (int j = 1; j <= k; j++)
+                {
+                    if (queue.Count == 0)
+                    {
+                        while (Temp.Count != 0)
+                        {
+                            queue.Enqueue(Temp.Dequeue());
+                        }
+                    }
+
+                    if (j == k)
+                    {
+                        queue.Dequeue();
+                        break;
+                    }
+                  
+                    Temp.Enqueue(queue.Dequeue());
+                    
+
+                }
+            
+                while (Temp.Count!=0)
+                {
+                    queue.Enqueue(Temp.Dequeue());
+
+                }
+                
+
+
+            }
+
+       
+
+
+            return '\n';
+           
+
+
+        }
+    } 
 
     
     
