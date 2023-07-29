@@ -11,6 +11,8 @@ Finally, the code checks if certain values (40 and 90) exist in the tree using t
 
 ![white](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-14/SearchTree.jpg)
 
+![test](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-14/Test-TreeSearch.png)
+
 ## walkthrough :
 
 Walkthrough of the Code:
@@ -53,8 +55,8 @@ In summary, this code provides an implementation of a Binary Search Tree and dem
 ```
 ## test unit:
 
-![test](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-14/Test-TreeSearch.png)
 
+![white](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-14/SearchTree.jpg)
 
 
 
