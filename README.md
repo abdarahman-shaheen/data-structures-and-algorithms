@@ -126,4 +126,3 @@ Returns: boolean indicating whether or not the value is in the tree at least onc
 ## 13. [Challenge15 (MaxTree)](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-15/README.md)
 
 
-https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-15/README.md
