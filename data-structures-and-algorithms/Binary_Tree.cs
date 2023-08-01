@@ -8,7 +8,7 @@ namespace data_structures_and_algorithms
 {
     public class BinaryTree<T>
     {
-        public Node<T> Root;
+        public Node<T> Root { get; set; }
 
         public BinaryTree()
         {
@@ -71,6 +71,10 @@ namespace data_structures_and_algorithms
                 result.Add(node.Value);
             }
         }
+
+       
+
+
 
     }
 }
