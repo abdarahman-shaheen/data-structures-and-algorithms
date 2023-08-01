@@ -79,7 +79,7 @@ namespace data_structures_and_algorithms
             // queue.Enqueue(2);
             // queue.Enqueue(3);
             // queue.Prints();            
-            AnimalShelter animalShelter = new AnimalShelter();
+           // AnimalShelter animalShelter = new AnimalShelter();
 
             // Enqueue
             //    Animal Rex = new Animal() { Species = "dog", Name = "Rex" };
@@ -120,6 +120,7 @@ namespace data_structures_and_algorithms
 
             Console.WriteLine("Post-order Traversal");
             Console.WriteLine(string.Join(", ", binarySeartchTree.PostorderTraversal()));
+            Console.WriteLine("maximum value in the tree is: " + binarySeartchTree.FindMaximumValue());
 
         }
 

@@ -9,8 +9,6 @@ namespace Binary_search
         {
               
             BinarySearchTree<int> binarySearchTree = new BinarySearchTree<int>();
-
-            
             Assert.Null(binarySearchTree.Root);
         }
 

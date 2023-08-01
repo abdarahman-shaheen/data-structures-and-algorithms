@@ -48,6 +48,32 @@ namespace data_structures_and_algorithms
                 return ContainsNode(node.Right, value);
 
         }
+        public T FindMaximumValue()
+        {
+            if (Root == null)
+                throw new InvalidOperationException("The binary tree is empty.");
+
+            T max = default(T);
+
+            Action<Node<T>> inOrderTraversal = null;
+            inOrderTraversal = (node) =>
+            {
+                if (node != null)
+                {
+                    inOrderTraversal(node.Left);
+                    if (Comparer<T>.Default.Compare(node.Value, max) > 0)
+                    {
+                        max = node.Value;
+                    }
+
+                    inOrderTraversal(node.Right);
+                }
+            };
+
+            inOrderTraversal(Root);
+
+            return max;
+        }
     }
 
 }
