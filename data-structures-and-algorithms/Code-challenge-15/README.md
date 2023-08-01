@@ -10,4 +10,4 @@
 6. Returns max, representing the maximum value in the current subtree. The DFS traversal ensures all nodes are visited, efficiently identifying the maximum value as it progresses through the tree.
 ## whiteboard:
 
-![white](white.png)
+![white](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-15/TreeMax.jpg)
