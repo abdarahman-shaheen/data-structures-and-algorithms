@@ -152,6 +152,27 @@ namespace Binary_search
             
             Assert.False(result);
         }
-    
-}
+        [Fact]
+        public void MaximumValue()
+        {
+            // Arrange
+            BinarySearchTree<int> binarySeartchTree = new BinarySearchTree<int>();
+
+            binarySeartchTree.Add(20);
+            binarySeartchTree.Add(30);
+            binarySeartchTree.Add(50);
+            binarySeartchTree.Add(25);
+            binarySeartchTree.Add(40);
+            binarySeartchTree.Add(60);
+            binarySeartchTree.Add(80);
+
+            // Act
+            var result = binarySeartchTree.FindMaximumValue();
+
+            // Assert
+            Assert.Equal(80, result);
+        }
+
+
+    }
 }
