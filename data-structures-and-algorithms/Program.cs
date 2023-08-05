@@ -79,7 +79,7 @@ namespace data_structures_and_algorithms
             // queue.Enqueue(2);
             // queue.Enqueue(3);
             // queue.Prints();            
-           // AnimalShelter animalShelter = new AnimalShelter();
+            // AnimalShelter animalShelter = new AnimalShelter();
 
             // Enqueue
             //    Animal Rex = new Animal() { Species = "dog", Name = "Rex" };
@@ -98,29 +98,44 @@ namespace data_structures_and_algorithms
             //     char[] charArray = { 'A', 'B', 'C', 'D' ,'E'};
             //  Console.WriteLine(DuckGosse(charArray, 3)); 
 
-            BinarySearchTree<int> binarySeartchTree = new BinarySearchTree<int>();
+            //BinarySearchTree<int> binarySeartchTree = new BinarySearchTree<int>();
 
-            binarySeartchTree.Add(20);
-            binarySeartchTree.Add(30);
-            binarySeartchTree.Add(50);
-            binarySeartchTree.Add(25);
-            binarySeartchTree.Add(40);
-            binarySeartchTree.Add(60);
-            binarySeartchTree.Add(80);
-
-
-            Console.WriteLine("Pre-Order Traversal");
-
-            string resultString = string.Join(",", binarySeartchTree.PreOrderTravarsel());
-            Console.WriteLine(resultString);
+            //binarySeartchTree.Add(20);
+            //binarySeartchTree.Add(30);
+            //binarySeartchTree.Add(50);
+            //binarySeartchTree.Add(25);
+            //binarySeartchTree.Add(40);
+            //binarySeartchTree.Add(60);
+            //binarySeartchTree.Add(80);
 
 
-            Console.WriteLine("In-order Traversal");
-            Console.WriteLine(string.Join(", ", binarySeartchTree.InorderTraversal()));
+            //Console.WriteLine("Pre-Order Traversal");
 
-            Console.WriteLine("Post-order Traversal");
-            Console.WriteLine(string.Join(", ", binarySeartchTree.PostorderTraversal()));
-            Console.WriteLine("maximum value in the tree is: " + binarySeartchTree.FindMaximumValue());
+            //string resultString = string.Join(",", binarySeartchTree.PreOrderTravarsel());
+            //Console.WriteLine(resultString);
+
+
+            //Console.WriteLine("In-order Traversal");
+            //Console.WriteLine(string.Join(", ", binarySeartchTree.InorderTraversal()));
+
+            //Console.WriteLine("Post-order Traversal");
+            //Console.WriteLine(string.Join(", ", binarySeartchTree.PostorderTraversal()));
+            //Console.WriteLine("maximum value in the tree is: " + binarySeartchTree.FindMaximumValue());
+            {
+                BinaryTree<int> binaryTree = new BinaryTree<int>();
+                binaryTree.Add(2);
+                binaryTree.Add(7);
+                binaryTree.Add(5);
+                binaryTree.Add(2);
+                binaryTree.Add(6);
+                binaryTree.Add(9);
+                binaryTree.Add(5);
+                binaryTree.Add(11);
+                binaryTree.Add(4);
+                Console.WriteLine("Breadth-First Traversal: " + string.Join(" ", binaryTree.BFS(binaryTree.Root)));
+
+            }
+
 
         }
 
