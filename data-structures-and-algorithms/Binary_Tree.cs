@@ -72,7 +72,60 @@ namespace data_structures_and_algorithms
             }
         }
 
-       
+
+        public List<int> BFS(Node<int> root)
+        {
+            Queue<Node<int>> queue = new Queue<Node<int>>();
+            List<int> results = new List<int>();
+            if (root == null) return results;
+            queue.Enqueue(root);
+            while (queue.Count != 0)
+            {
+                Node<int> newNode = queue.Dequeue();
+                results.Add(newNode.Value);
+                if (newNode.Left != null)
+                {
+                    queue.Enqueue(newNode.Left);
+                }
+                if (newNode.Right != null)
+                {
+                    queue.Enqueue(newNode.Right);
+                }
+            }
+            return results;
+
+        }
+        public void Add(T value)
+        {
+            Root = AddRecursive(Root, value);
+        }
+
+        private Node<T> AddRecursive(Node<T> current, T value)
+        {
+            if (current == null)
+            {
+                return new Node<T>(value);
+            }
+
+
+            if (current.Left == null)
+            {
+                current.Left = new Node<T>(value);
+            }
+
+            else if (current.Right == null)
+            {
+                current.Right = new Node<T>( value);
+            }
+
+            else
+            {
+                current.Left = AddRecursive(current.Left, value);
+            }
+
+            return current;
+        }
+
 
 
 
