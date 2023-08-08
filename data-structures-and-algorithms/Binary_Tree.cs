@@ -73,15 +73,15 @@ namespace data_structures_and_algorithms
         }
 
 
-        public List<int> BFS(Node<int> root)
+        public List<T> BFS(Node<T> root)
         {
-            Queue<Node<int>> queue = new Queue<Node<int>>();
-            List<int> results = new List<int>();
+            Queue<Node<T>> queue = new Queue<Node<T>>();
+            List<T> results = new List<T>();
             if (root == null) return results;
             queue.Enqueue(root);
             while (queue.Count != 0)
             {
-                Node<int> newNode = queue.Dequeue();
+                Node<T> newNode = queue.Dequeue();
                 results.Add(newNode.Value);
                 if (newNode.Left != null)
                 {
@@ -124,6 +124,66 @@ namespace data_structures_and_algorithms
             }
 
             return current;
+        }
+
+        public BinaryTree<string> FizzBuzzTree()
+        {
+            BinaryTree<string> fizzBuzzTree = new BinaryTree<string>();
+
+            if (Root == null)
+            {
+                return fizzBuzzTree;
+            }
+
+            Queue<Node<T>> originalNodes = new Queue<Node<T>>();
+            Queue<Node<string>> fizzBuzzNodes = new Queue<Node<string>>();
+
+            originalNodes.Enqueue(Root);
+            fizzBuzzNodes.Enqueue(new Node<string>(FizzBuzzValue(Root.Value)));
+
+            fizzBuzzTree.Root = fizzBuzzNodes.Peek();
+
+            while (originalNodes.Count > 0)
+            {
+                Node<T> originalNode = originalNodes.Dequeue();
+                Node<string> fizzBuzzNode = fizzBuzzNodes.Dequeue();
+
+                if (originalNode.Left != null)
+                {
+                    originalNodes.Enqueue(originalNode.Left);
+                    fizzBuzzNode.Left = new Node<string>(FizzBuzzValue(originalNode.Left.Value));
+                    fizzBuzzNodes.Enqueue(fizzBuzzNode.Left);
+                }
+
+                if (originalNode.Right != null)
+                {
+                    originalNodes.Enqueue(originalNode.Right);
+                    fizzBuzzNode.Right = new Node<string>(FizzBuzzValue(originalNode.Right.Value));
+                    fizzBuzzNodes.Enqueue(fizzBuzzNode.Right);
+                }
+            }
+
+            return fizzBuzzTree;
+        }
+
+        private string FizzBuzzValue(dynamic value)
+        {
+            if (value % 3 == 0 && value % 5 == 0)
+            {
+                return "FizzBuzz";
+            }
+            else if (value % 3 == 0)
+            {
+                return "Fizz";
+            }
+            else if (value % 5 == 0)
+            {
+                return "Buzz";
+            }
+            else
+            {
+                return value.ToString();
+            }
         }
 
 
