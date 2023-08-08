@@ -131,3 +131,15 @@ Write a function called breadth first
 Arguments: tree
 Return: list of all values in the tree, in the order they were encountered
 
+## 13. [Challenge15 (MaxTree)](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-17/README.mdhttps://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-17/README.md)
+Write a function called fizz buzz tree
+Arguments: k-ary tree
+Return: new k-ary tree
+Determine whether or not the value of each node is divisible by 3, 5 or both. Create a new tree with the same structure as the original, but the values modified as follows:
+
+If the value is divisible by 3, replace the value with “Fizz”
+If the value is divisible by 5, replace the value with “Buzz”
+If the value is divisible by 3 and 5, replace the value with “FizzBuzz”
+If the value is not divisible by 3 or 5, simply turn the number into a String.
+
+
