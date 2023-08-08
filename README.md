@@ -131,7 +131,7 @@ Write a function called breadth first
 Arguments: tree
 Return: list of all values in the tree, in the order they were encountered
 
-## 13. [Challenge15 (MaxTree)](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-17/README.mdhttps://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-17/README.md)
+## 13. [Challenge15 (tree-fizz-buzz)](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-17/README.md)
 Feature Tasks
 Write a function called fizz buzz tree
 Arguments: k-ary tree
