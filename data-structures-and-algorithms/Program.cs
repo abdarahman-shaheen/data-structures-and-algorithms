@@ -122,6 +122,18 @@ namespace data_structures_and_algorithms
             //Console.WriteLine(string.Join(", ", binarySeartchTree.PostorderTraversal()));
             //Console.WriteLine("maximum value in the tree is: " + binarySeartchTree.FindMaximumValue());
             {
+                //BinaryTree<int> binaryTree = new BinaryTree<int>();
+                //binaryTree.Add(2);
+                //binaryTree.Add(7);
+                //binaryTree.Add(5);
+                //binaryTree.Add(2);
+                //binaryTree.Add(6);
+                //binaryTree.Add(9);
+                //binaryTree.Add(5);
+                //binaryTree.Add(11);
+                //binaryTree.Add(4);
+                //Console.WriteLine("Breadth-First Traversal: " + string.Join(" ", binaryTree.BFS(binaryTree.Root)));
+
                 BinaryTree<int> binaryTree = new BinaryTree<int>();
                 binaryTree.Add(2);
                 binaryTree.Add(7);
@@ -132,7 +144,10 @@ namespace data_structures_and_algorithms
                 binaryTree.Add(5);
                 binaryTree.Add(11);
                 binaryTree.Add(4);
+                BinaryTree<string> fizzBuzzTree = binaryTree.FizzBuzzTree();
                 Console.WriteLine("Breadth-First Traversal: " + string.Join(" ", binaryTree.BFS(binaryTree.Root)));
+
+                Console.WriteLine("FizzBuzz Tree: " + string.Join(" ", fizzBuzzTree.BFS(fizzBuzzTree.Root)));
 
             }
 
