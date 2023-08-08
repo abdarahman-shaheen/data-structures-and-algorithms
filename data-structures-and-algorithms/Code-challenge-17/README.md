@@ -2,10 +2,11 @@
 
 ## Approach & Efficiency
 **Algorithm**
-The algorithm for the FizzBuzzTree method is a recursive algorithm that traverses the binary tree using the Inorder traversal technique. During the traversal, it checks each node's value and replaces it with "FizzBuzz," "Buzz," or "Fizz" based on the following conditions:
-If the node's value is divisible by 15, replace the value with "FizzBuzz."
-If the node's value is divisible by 5, replace the value with "Buzz."
-If the node's value is divisible by 3, replace the value with "Fizz."
+- The algorithm for the FizzBuzzTree method is a recursive algorithm that traverses the binary tree using the Inorder traversal technique. During the traversal, it checks each node's value and replaces it with "FizzBuzz," "Buzz," or "Fizz" based on the following conditions:
+1- If the node's value is divisible by 15, replace the value with "FizzBuzz."
+2- If the node's value is divisible by 5, replace the value with "Buzz."
+3- If the node's value is divisible by 3, replace the value with "Fizz."
+
 The steps of the algorithm are as follows:
 Start the FizzBuzzTree method by calling the overloaded version with the Root node of the binary tree.
 In the recursive FizzBuzzTree method: a. Check if the current node is not null. b. Recursively call FizzBuzzTree for the left subtree of the current node. c. Check the current node's value using the CheckForNode method, and update the value accordingly. d. Recursively call FizzBuzzTree for the right subtree of the current node.
