@@ -21,5 +21,30 @@ namespace TestBinarySearch
             Assert.Equal(2, result);
         }
 
+        [Fact]
+        public void TestFizzBuzzTree()
+        {
+            // Arrange
+            BinaryTree<int> tree = new BinaryTree<int>();
+            tree.Add(1);
+            tree.Add(3);
+            tree.Add(5);
+            tree.Add(15);
+            tree.Add(7);
+
+            // Act
+            BinaryTree<string> fizzBuzzTree = tree.FizzBuzzTree();
+
+            // Assert
+            List<string> expectedValues = new List<string>
+            {
+                "1", "Fizz", "Buzz", "FizzBuzz", "7"
+            };
+
+            List<string> actualValues = fizzBuzzTree.BFS(fizzBuzzTree.Root).ToList();
+
+            Assert.Equal(expectedValues, actualValues);
+        }
     }
+
 }
