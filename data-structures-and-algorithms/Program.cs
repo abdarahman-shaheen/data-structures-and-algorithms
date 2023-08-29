@@ -134,199 +134,235 @@ namespace data_structures_and_algorithms
                 //binaryTree.Add(4);
                 //Console.WriteLine("Breadth-First Traversal: " + string.Join(" ", binaryTree.BFS(binaryTree.Root)));
 
-                BinaryTree<int> binaryTree = new BinaryTree<int>();
-                binaryTree.Add(2);
-                binaryTree.Add(7);
-                binaryTree.Add(5);
-                binaryTree.Add(2);
-                binaryTree.Add(6);
-                binaryTree.Add(9);
-                binaryTree.Add(5);
-                binaryTree.Add(11);
-                binaryTree.Add(4);
-                BinaryTree<string> fizzBuzzTree = binaryTree.FizzBuzzTree();
-                Console.WriteLine("Breadth-First Traversal: " + string.Join(" ", binaryTree.BFS(binaryTree.Root)));
+                //BinaryTree<int> binaryTree = new BinaryTree<int>();
+                //binaryTree.Add(2);
+                //binaryTree.Add(7);
+                //binaryTree.Add(5);
+                //binaryTree.Add(2);
+                //binaryTree.Add(6);
+                //binaryTree.Add(9);
+                //binaryTree.Add(5);
+                //binaryTree.Add(11);
+                //binaryTree.Add(4);
+                //BinaryTree<string> fizzBuzzTree = binaryTree.FizzBuzzTree();
+                //Console.WriteLine("Breadth-First Traversal: " + string.Join(" ", binaryTree.BFS(binaryTree.Root)));
 
-                Console.WriteLine("FizzBuzz Tree: " + string.Join(" ", fizzBuzzTree.BFS(fizzBuzzTree.Root)));
+                //Console.WriteLine("FizzBuzz Tree: " + string.Join(" ", fizzBuzzTree.BFS(fizzBuzzTree.Root)));
 
-            }
+                int[] inputArray = { 5, 2, 9, 3, 4, 6 };
+                int[] sortedArray = InsertionSort(inputArray);
 
-
-        }
-
-        public static int[] Reverse(int[] array)
-        {
-            if (array.Length<0 || array==null)
-            {
-                throw new ArgumentNullException("array is null");   
-
-            }
-            else
-            {
-                int[] newArray = new int[array.Length];
-                int index = 0;
-                for (int i = array.Length - 1; i >= 0; i--)
+                Console.WriteLine("Sorted Array:");
+                foreach (int num in sortedArray)
                 {
-                    newArray[index] = array[i];
-                    index++;
+                    Console.Write(num + " ");
                 }
-                return newArray;
             }
-            
+
+
         }
- 
-        public static int[] InsertShiftArray(int[] array,int value) {
-            if (array.Length < 0 || array == null)
-            {
-                throw new ArgumentNullException("array is null");
 
-            }
-            else
+       
+            public static void Insert(int[] sorted, int value)
             {
-                int[] newArray = new int[array.Length + 1];
-                int medindex = array.Length / 2;
-
-                for (int i = 0, j = 0; i <= array.Length; i++, j++)
+                int i = 0;
+                while (i < sorted.Length && value > sorted[i])
                 {
-                    if (i == medindex)
-                    {
-                        newArray[i] = value;
-                        j--;
-                    }
-                    else
-                    {
-                        newArray[i] = array[j];
-                    }
-
+                    i++;
                 }
-                return newArray;
-
+                while (i < sorted.Length)
+                {
+                    int temp = sorted[i];
+                    sorted[i] = value;
+                    value = temp;
+                    i++;
+                }
             }
 
-
-        }
-        public static int BinarySearch(int[] arr, int key)
-        {
-            int h = arr.Length - 1;
-            int l = 0;
-            while (l <= h)
+            public static int[] InsertionSort(int[] input)
             {
-                int m = (l + h) / 2;
-
-                if (arr[m] == key)
+                int[] sorted = new int[input.Length];
+                sorted[0] = input[0];
+                for (int i = 1; i < input.Length; i++)
                 {
-                    return m;
+                    Insert(sorted, input[i]);
+                }
+                return sorted;
+            }
+
+            public static int[] Reverse(int[] array)
+            {
+                if (array.Length < 0 || array == null)
+                {
+                    throw new ArgumentNullException("array is null");
+
                 }
                 else
                 {
-                    if (key > arr[m])
-                        l = m + 1;
+                    int[] newArray = new int[array.Length];
+                    int index = 0;
+                    for (int i = array.Length - 1; i >= 0; i--)
+                    {
+                        newArray[index] = array[i];
+                        index++;
+                    }
+                    return newArray;
+                }
+
+            }
+
+            public static int[] InsertShiftArray(int[] array, int value)
+            {
+                if (array.Length < 0 || array == null)
+                {
+                    throw new ArgumentNullException("array is null");
+
+                }
+                else
+                {
+                    int[] newArray = new int[array.Length + 1];
+                    int medindex = array.Length / 2;
+
+                    for (int i = 0, j = 0; i <= array.Length; i++, j++)
+                    {
+                        if (i == medindex)
+                        {
+                            newArray[i] = value;
+                            j--;
+                        }
+                        else
+                        {
+                            newArray[i] = array[j];
+                        }
+
+                    }
+                    return newArray;
+
+                }
+
+
+            }
+            public static int BinarySearch(int[] arr, int key)
+            {
+                int h = arr.Length - 1;
+                int l = 0;
+                while (l <= h)
+                {
+                    int m = (l + h) / 2;
+
+                    if (arr[m] == key)
+                    {
+                        return m;
+                    }
                     else
                     {
-                        h = m - 1;
-                    }
-                }
-
-            }
-            return -1;
-        }
-
-        public static bool ValidatorBracket(string brackt)
-        {
-            Stack<char> stack = new Stack<char>();
-
-            for (int i = 0; i < brackt.Length; i++)
-            {
-                if (brackt[i] == '{'|| brackt[i] == '('|| brackt[i]=='[')
-                {
-                    stack.Push(brackt[i]);
-                }
-                else if(brackt[i] == '}' || brackt[i] == ')' || brackt[i] == ']')
-                {
-                    if (stack.Count == 0)
-                        return false;
-
-                    char top = stack.Peek();
-                    if (brackt[i] == ')' && top == '(')
-                    {
-                        stack.Pop();
-                    }
-                    else if (brackt[i] == ']' && top == '[')
-                    {
-                        stack.Pop();
-                    }
-                    else if (brackt[i] == '}' && top == '{')
-                    {
-                        stack.Pop();
-                    };
-
-                }
-                
-            }
-            if( stack.Count == 0)
-            {
-               return true;
-            }
-            return false;
-        }
-
-        public static char DuckGosse(char[] chars,int k)
-        {
-            Queue<char> queue = new Queue<char>();
-            Queue<char> Temp = new Queue<char>();
-
-            for (int i = 0; i < chars.Length; i++)
-            {
-                queue.Enqueue(chars[i]);
-            }
-            while(queue.Count!=0)
-            {
-                if (queue.Count == 1)
-                {
-                    return queue.Dequeue();
-                }
-
-                for (int j = 1; j <= k; j++)
-                {
-                    if (queue.Count == 0)
-                    {
-                        while (Temp.Count != 0)
+                        if (key > arr[m])
+                            l = m + 1;
+                        else
                         {
-                            queue.Enqueue(Temp.Dequeue());
+                            h = m - 1;
                         }
                     }
 
-                    if (j == k)
-                    {
-                        queue.Dequeue();
-                        break;
-                    }
-                  
-                    Temp.Enqueue(queue.Dequeue());
-                    
-
                 }
-            
-                while (Temp.Count!=0)
+                return -1;
+            }
+
+            public static bool ValidatorBracket(string brackt)
+            {
+                Stack<char> stack = new Stack<char>();
+
+                for (int i = 0; i < brackt.Length; i++)
                 {
-                    queue.Enqueue(Temp.Dequeue());
+                    if (brackt[i] == '{' || brackt[i] == '(' || brackt[i] == '[')
+                    {
+                        stack.Push(brackt[i]);
+                    }
+                    else if (brackt[i] == '}' || brackt[i] == ')' || brackt[i] == ']')
+                    {
+                        if (stack.Count == 0)
+                            return false;
+
+                        char top = stack.Peek();
+                        if (brackt[i] == ')' && top == '(')
+                        {
+                            stack.Pop();
+                        }
+                        else if (brackt[i] == ']' && top == '[')
+                        {
+                            stack.Pop();
+                        }
+                        else if (brackt[i] == '}' && top == '{')
+                        {
+                            stack.Pop();
+                        };
+
+                    }
 
                 }
-                
+                if (stack.Count == 0)
+                {
+                    return true;
+                }
+                return false;
+            }
+
+            public static char DuckGosse(char[] chars, int k)
+            {
+                Queue<char> queue = new Queue<char>();
+                Queue<char> Temp = new Queue<char>();
+
+                for (int i = 0; i < chars.Length; i++)
+                {
+                    queue.Enqueue(chars[i]);
+                }
+                while (queue.Count != 0)
+                {
+                    if (queue.Count == 1)
+                    {
+                        return queue.Dequeue();
+                    }
+
+                    for (int j = 1; j <= k; j++)
+                    {
+                        if (queue.Count == 0)
+                        {
+                            while (Temp.Count != 0)
+                            {
+                                queue.Enqueue(Temp.Dequeue());
+                            }
+                        }
+
+                        if (j == k)
+                        {
+                            queue.Dequeue();
+                            break;
+                        }
+
+                        Temp.Enqueue(queue.Dequeue());
+
+
+                    }
+
+                    while (Temp.Count != 0)
+                    {
+                        queue.Enqueue(Temp.Dequeue());
+
+                    }
+
+
+
+                }
+
+
+
+
+                return '\n';
+
 
 
             }
-
-       
-
-
-            return '\n';
-           
-
-
         }
-    } 
 
+    }
     
-    
-}
