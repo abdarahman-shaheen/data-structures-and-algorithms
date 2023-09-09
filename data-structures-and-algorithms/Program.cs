@@ -156,15 +156,46 @@ namespace data_structures_and_algorithms
             //foreach (int num in sortedArray)
             //{
             //    Console.Write(num + " ");
-            //}
-            int[] arr = { 12, 11, 13, 5, 6, 7 };
-            Console.WriteLine("Original array:");
-            PrintArray(arr);
+            ////}
+            //int[] arr = { 12, 11, 13, 5, 6, 7 };
+            //Console.WriteLine("Original array:");
+            //PrintArray(arr);
 
-            MergeSort(arr);
+            //MergeSort(arr);
 
-            Console.WriteLine("\nSorted array:");
-            PrintArray(arr);
+            //Console.WriteLine("\nSorted array:");
+            //PrintArray(arr);
+
+            List<Movie> movies = new List<Movie>
+{
+new Movie { Title = "The Shawshank Redemption", Year = 1994, Genres = new List<string> { "Drama" } },
+    new Movie { Title = "The Godfather", Year = 1972, Genres = new List<string> { "Crime", "Drama" } },
+
+    // Adding more non-anime movies
+    new Movie { Title = "Pulp Fiction", Year = 1994, Genres = new List<string> { "Crime", "Drama" } },
+    new Movie { Title = "Inception", Year = 2010, Genres = new List<string> { "Action", "Adventure", "Sci-Fi" } },
+    new Movie { Title = "The Dark Knight", Year = 2008, Genres = new List<string> { "Action", "Crime", "Drama" } },
+    new Movie { Title = "Forrest Gump", Year = 1994, Genres = new List<string> { "Drama", "Romance" } }
+
+};
+            List<Movie> sortedByYear = Movie.SortByYear(new List<Movie>(movies));
+            List<Movie> sortedByTitle = Movie.SortByName(new List<Movie>(movies));
+
+            Console.WriteLine("{0,-30} {1}", "Title", "Year");
+            Console.WriteLine(new string('-', 36));
+
+            foreach (var movie in sortedByYear)
+            {
+                Console.WriteLine("{0,-30} {1}", movie.Title, movie.Year);
+            }
+
+            Console.WriteLine("\nSorted by title:");
+            foreach (var movie in sortedByTitle)
+            {
+                Console.WriteLine($"Title: {movie.Title}.");
+
+
+            }
 
         }
 
