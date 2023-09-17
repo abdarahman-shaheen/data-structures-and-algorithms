@@ -147,6 +147,10 @@ If the value is not divisible by 3 or 5, simply turn the number into a String.
 
 ## 14. [Challenge20 (Hash Table)](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-21/README.md)
 ## 15. [Challenge21 (Hash Map word)](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-22/README.md)
+Feature Tasks
+Write a function called repeated word that finds the first word to occur more than once in a string
+Arguments: string
+Return: string
 
 
 
