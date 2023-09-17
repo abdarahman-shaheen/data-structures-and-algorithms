@@ -7,19 +7,27 @@ namespace data_structures_and_algorithms
     {
         static void Main(string[] args)
         {
-            Hashtable hashtable = new Hashtable();
+            var hashtable = new Hashtable<string, int>(10);
 
-            hashtable.Set("name", "John");
-            hashtable.Set("age", 30);
-            hashtable.Set("city", "New York");
+            hashtable.Set("John", 30);
+            hashtable.Set("Alice", 25);
+            hashtable.Set("Bob", 28);
 
-            Console.WriteLine("Name: " + hashtable.Get("name"));
-            Console.WriteLine("Age: " + hashtable.Get("age"));
-            Console.WriteLine("Has city: " + hashtable.Has("city"));
-            Console.WriteLine("Has country: " + hashtable.Has("country"));
+            Console.WriteLine("Does 'John' exist in the hashtable? " + hashtable.Has("John")); 
+            Console.WriteLine("Does 'Eve' exist in the hashtable? " + hashtable.Has("Eve"));   
 
-            List<string> keys = hashtable.Keys();
-            Console.WriteLine("Keys: " + string.Join(", ", keys));
+            Console.WriteLine("Age of John: " + hashtable.GetHash("John")); 
+
+            Console.WriteLine("Keys in the hashtable:");
+            foreach (var key in hashtable.Keys())
+            {
+                Console.WriteLine(key);
+            }
+
+            Console.WriteLine("Hash code for 'Alice': " + hashtable.Hash("Alice")); 
+
+
+            Console.ReadLine();
             /*
             int[] array = new int[] {1,2,3,4,5};
             int valuAdded = 7;
