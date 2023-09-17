@@ -1,4 +1,3 @@
-﻿﻿# challenge : Hash Tables
 ## explanation
  the code demonstrates the Implemintationn for the Hash Tables.
 
