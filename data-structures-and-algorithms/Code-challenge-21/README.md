@@ -1,4 +1,4 @@
-## explanation
+## Hahs table
  the code demonstrates the Implemintationn for the Hash Tables.
 
 
