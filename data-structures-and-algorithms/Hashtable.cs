@@ -6,99 +6,166 @@ using System.Threading.Tasks;
 
 namespace data_structures_and_algorithms
 {
-    public class Hashtable
+    public class Hashtable<TKey, TValue>
     {
-        public class KeyValue
+        public int size;
+        public List<KeyValuePair<TKey, TValue>>[] buckets;
+
+        public Hashtable(int size)
         {
-            public string Key { get; set; }
-            public object Value { get; set; }
+            this.size = size;
+            this.buckets = new List<KeyValuePair<TKey, TValue>>[size];
         }
 
-
-        public const int Size = 100;
-        public List<List<KeyValue>> table;
-
-        public Hashtable()
+        public int GetHash(TKey key)
         {
-            table = new List<List<KeyValue>>(Size);
-            for (int i = 0; i < Size; i++)
+            int hashCode = key.GetHashCode();
+            if (hashCode < 0)
             {
-                table.Add(new List<KeyValue>());
+                hashCode = Math.Abs(hashCode);
             }
+            return hashCode % size;
         }
 
-        public int CalculateHash(string key)
+        public void Set(TKey key, TValue value)
         {
-            int hash = 0;
-            foreach (char c in key)
+            int index = GetHash(key);
+            if (buckets[index] == null)
             {
-                hash += c;
+                buckets[index] = new List<KeyValuePair<TKey, TValue>>();
             }
-            return hash % Size;
-        }
 
-        public void Set(string key, object value)
-        {
-            int index = CalculateHash(key);
-            List<KeyValue> bucket = table[index];
-
-            foreach (var kvp in bucket)
+            for (int i = 0; i < buckets[index].Count; i++)
             {
-                if (kvp.Key == key)
+                if (buckets[index][i].Key.Equals(key))
                 {
-                    kvp.Value = value;
+                    buckets[index][i] = new KeyValuePair<TKey, TValue>(key, value);
                     return;
                 }
             }
 
-            bucket.Add(new KeyValue { Key = key, Value = value });
+            buckets[index].Add(new KeyValuePair<TKey, TValue>(key, value));
         }
 
-        public object Get(string key)
+
+
+        public bool Has(TKey key)
         {
-            int index = CalculateHash(key);
-            List<KeyValue> bucket = table[index];
-
-            foreach (var kvp in bucket)
+            int index = GetHash(key);
+            if (buckets[index] != null)
             {
-                if (kvp.Key == key)
+                foreach (var kvp in buckets[index])
                 {
-                    return kvp.Value;
-                }
-            }
-
-            return null;
-        }
-
-        public bool Has(string key)
-        {
-            int index = CalculateHash(key);
-            List<KeyValue> bucket = table[index];
-
-            foreach (var kvp in bucket)
-            {
-                if (kvp.Key == key)
-                {
-                    return true;
+                    if (kvp.Key.Equals(key))
+                    {
+                        return true;
+                    }
                 }
             }
 
             return false;
         }
 
-        public List<string> Keys()
+        public IEnumerable<TKey> Keys()
         {
-            List<string> keys = new List<string>();
-
-            foreach (var bucket in table)
+            var keys = new List<TKey>();
+            foreach (var bucket in buckets)
             {
-                foreach (var kvp in bucket)
+                if (bucket != null)
                 {
-                    keys.Add(kvp.Key);
+                    foreach (var kvp in bucket)
+                    {
+                        keys.Add(kvp.Key);
+                    }
                 }
             }
-
             return keys;
         }
+
+        public int Hash(TKey key)
+        {
+            return GetHash(key);
+        }
     }
+
+    //public string FindFirstRepeatedWord(string input)
+    //{
+    //    if (string.IsNullOrWhiteSpace(input))
+    //    {
+    //        throw new ArgumentException("Input string is empty or null.");
+    //    }
+
+    //    List<string> words = SplitStringIntoWords(input);
+
+    //    var wordFrequencyTable = new CustomHashTable<string, int>(words.Count);
+
+    //    foreach (string word in words)
+    //    {
+    //        string lowercaseWord = word.ToLower();
+
+    //        if (wordFrequencyTable.ContainsKey(lowercaseWord))
+    //        {
+    //            return word;
+    //        }
+
+    //        wordFrequencyTable.Add(lowercaseWord, 1);
+    //    }
+
+    //    return null;
+    //}
+
+    //private List<string> SplitStringIntoWords(string input)
+    //{
+    //    List<string> words = new List<string>();
+    //    StringBuilder currentWord = new StringBuilder();
+
+    //    foreach (char c in input)
+    //    {
+    //        if (char.IsWhiteSpace(c) || IsPunctuation(c))
+    //        {
+    //            if (currentWord.Length > 0)
+    //            {
+    //                words.Add(currentWord.ToString());
+    //                currentWord.Clear();
+    //            }
+    //        }
+    //        else
+    //        {
+    //            currentWord.Append(c);
+    //        }
+    //    }
+
+    //    if (currentWord.Length > 0)
+    //    {
+    //        words.Add(currentWord.ToString());
+    //    }
+
+    //    return words;
+    //}
+
+    //private bool IsPunctuation(char c)
+    //{
+    //    char[] punctuationChars = { '.', ',', ';', '!', '?' };
+    //    return Array.IndexOf(punctuationChars, c) != -1;
+    //}
+
+    //public bool TryGetValue(TKey key, out TValue value)
+    //{
+    //    int index = GetHash(key);
+    //    if (buckets[index] != null)
+    //    {
+    //        foreach (var kvp in buckets[index])
+    //        {
+    //            if (kvp.Key.Equals(key))
+    //            {
+    //                value = kvp.Value;
+    //                return true;
+    //            }
+    //        }
+    //    }
+
+    //    value = default(TValue);
+    //    return false;
+    //}
+
 }

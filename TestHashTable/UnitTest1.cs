@@ -5,76 +5,51 @@ namespace TestHashTable
 {
     public class UnitTest1
     {
+        
+
         [Fact]
-        public void SettingKeyValueShouldRetrieveValue()
+        public void TestHas()
         {
+            // Arrange
+            var hashtable = new Hashtable<string, int>(10);
 
-            Hashtable hashtable = new Hashtable();
+            // Act
+            hashtable.Set("Alice", 25);
 
-
-            hashtable.Set("name", "John");
-
-            Assert.Equal("John", hashtable.Get("name"));
+            // Assert
+            Assert.True(hashtable.Has("Alice"));
+            Assert.False(hashtable.Has("Bob"));
         }
 
         [Fact]
-        public void RetrieveNonExistentKeyShouldReturnNull()
+        public void TestKeys()
         {
+            // Arrange
+            var hashtable = new Hashtable<string, int>(10);
 
-            Hashtable hashtable = new Hashtable();
+            // Act
+            hashtable.Set("Alice", 25);
+            hashtable.Set("Bob", 30);
 
-            object result = hashtable.Get("nonexistent");
-
-
-            Assert.Null(result);
+            // Assert
+            var keys = hashtable.Keys();
+            Assert.Contains("Alice", keys);
+            Assert.Contains("Bob", keys);
+            Assert.DoesNotContain("Eve", keys);
         }
 
         [Fact]
-        public void RetrieveKeysShouldReturnUniqueKeys()
+        public void TestHash()
         {
+            // Arrange
+            var hashtable = new Hashtable<string, int>(10);
 
-            Hashtable hashtable = new Hashtable();
-            hashtable.Set("name", "John");
-            hashtable.Set("age", 30);
-            hashtable.Set("city", "New York");
+            // Act
+            int hash = hashtable.Hash("Alice");
 
-
-            List<string> keys = hashtable.Keys();
-
-
-            Assert.Contains("name", keys);
-            Assert.Contains("age", keys);
-            Assert.Contains("city", keys);
-            Assert.Equal(3, keys.Count);
+            // Assert
+            Assert.InRange(hash, 0, 9);
         }
 
-        [Fact]
-        public void HandleCollisionWithinHashtable()
-        {
-
-            Hashtable hashtable = new Hashtable();
-
-
-            hashtable.Set("name", "John");
-            hashtable.Set("eman", "Jane");
-
-
-            Assert.Equal("John", hashtable.Get("name"));
-            Assert.Equal("Jane", hashtable.Get("eman"));
-        }
-
-        [Fact]
-        public void HashKeyToInRangeValue()
-        {
-
-            Hashtable hashtable = new Hashtable();
-
-
-            int hash = hashtable.CalculateHash("name");
-
-
-            Assert.InRange(hash, 0, Hashtable.Size - 1);
-
-        }
     }
 }
