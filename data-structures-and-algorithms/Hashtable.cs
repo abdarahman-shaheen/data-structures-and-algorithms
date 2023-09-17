@@ -86,86 +86,103 @@ namespace data_structures_and_algorithms
         {
             return GetHash(key);
         }
+
+
+        public string FindFirstRepeatedWord(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                throw new ArgumentException("Input string is empty or null.");
+            }
+
+            List<string> words = SplitStringIntoWords(input);
+
+            var wordFrequencyTable = new Hashtable<string, int>(words.Count);
+
+            foreach (string word in words)
+            {
+                string lowercaseWord = word.ToLower();
+
+                if (wordFrequencyTable.ContainsKey(lowercaseWord))
+                {
+                    return word;
+                }
+
+                wordFrequencyTable.Set(lowercaseWord, 1);
+            }
+
+            return null;
+        }
+
+        private List<string> SplitStringIntoWords(string input)
+        {
+            List<string> words = new List<string>();
+            StringBuilder currentWord = new StringBuilder();
+
+            foreach (char c in input)
+            {
+                if (char.IsWhiteSpace(c) || IsPunctuation(c))
+                {
+                    if (currentWord.Length > 0)
+                    {
+                        words.Add(currentWord.ToString());
+                        currentWord.Clear();
+                    }
+                }
+                else
+                {
+                    currentWord.Append(c);
+                }
+            }
+
+            if (currentWord.Length > 0)
+            {
+                words.Add(currentWord.ToString());
+            }
+
+            return words;
+        }
+
+        private bool IsPunctuation(char c)
+        {
+            char[] punctuationChars = { '.', ',', ';', '!', '?' };
+            return Array.IndexOf(punctuationChars, c) != -1;
+        }
+
+        public bool TryGetValue(TKey key, out TValue value)
+        {
+            int index = GetHash(key);
+            if (buckets[index] != null)
+            {
+                foreach (var kvp in buckets[index])
+                {
+                    if (kvp.Key.Equals(key))
+                    {
+                        value = kvp.Value;
+                        return true;
+                    }
+                }
+            }
+
+            value = default(TValue);
+            return false;
+        }
+        public bool ContainsKey(TKey key)
+        {
+            int index = GetHash(key);
+            if (buckets[index] != null)
+            {
+                foreach (var kvp in buckets[index])
+                {
+                    if (kvp.Key.Equals(key))
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
     }
-
-    //public string FindFirstRepeatedWord(string input)
-    //{
-    //    if (string.IsNullOrWhiteSpace(input))
-    //    {
-    //        throw new ArgumentException("Input string is empty or null.");
-    //    }
-
-    //    List<string> words = SplitStringIntoWords(input);
-
-    //    var wordFrequencyTable = new CustomHashTable<string, int>(words.Count);
-
-    //    foreach (string word in words)
-    //    {
-    //        string lowercaseWord = word.ToLower();
-
-    //        if (wordFrequencyTable.ContainsKey(lowercaseWord))
-    //        {
-    //            return word;
-    //        }
-
-    //        wordFrequencyTable.Add(lowercaseWord, 1);
-    //    }
-
-    //    return null;
-    //}
-
-    //private List<string> SplitStringIntoWords(string input)
-    //{
-    //    List<string> words = new List<string>();
-    //    StringBuilder currentWord = new StringBuilder();
-
-    //    foreach (char c in input)
-    //    {
-    //        if (char.IsWhiteSpace(c) || IsPunctuation(c))
-    //        {
-    //            if (currentWord.Length > 0)
-    //            {
-    //                words.Add(currentWord.ToString());
-    //                currentWord.Clear();
-    //            }
-    //        }
-    //        else
-    //        {
-    //            currentWord.Append(c);
-    //        }
-    //    }
-
-    //    if (currentWord.Length > 0)
-    //    {
-    //        words.Add(currentWord.ToString());
-    //    }
-
-    //    return words;
-    //}
-
-    //private bool IsPunctuation(char c)
-    //{
-    //    char[] punctuationChars = { '.', ',', ';', '!', '?' };
-    //    return Array.IndexOf(punctuationChars, c) != -1;
-    //}
-
-    //public bool TryGetValue(TKey key, out TValue value)
-    //{
-    //    int index = GetHash(key);
-    //    if (buckets[index] != null)
-    //    {
-    //        foreach (var kvp in buckets[index])
-    //        {
-    //            if (kvp.Key.Equals(key))
-    //            {
-    //                value = kvp.Value;
-    //                return true;
-    //            }
-    //        }
-    //    }
-
-    //    value = default(TValue);
-    //    return false;
-    //}
-
 }

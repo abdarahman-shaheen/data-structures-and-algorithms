@@ -7,27 +7,45 @@ namespace data_structures_and_algorithms
     {
         static void Main(string[] args)
         {
-            var hashtable = new Hashtable<string, int>(10);
+            Hashtable<string, int> customHashTable = new Hashtable<string, int>(100);
 
-            hashtable.Set("John", 30);
-            hashtable.Set("Alice", 25);
-            hashtable.Set("Bob", 28);
+            string input1 = "This is a test. This is only a test.";
+            string input2 = "No repeated words in this sentence.";
+            string input3 = "Another test with a repeated word. Test it.";
 
-            Console.WriteLine("Does 'John' exist in the hashtable? " + hashtable.Has("John")); 
-            Console.WriteLine("Does 'Eve' exist in the hashtable? " + hashtable.Has("Eve"));   
+            string repeatedWord1 = customHashTable.FindFirstRepeatedWord(input1);
+            string repeatedWord2 = customHashTable.FindFirstRepeatedWord(input2);
+            string repeatedWord3 = customHashTable.FindFirstRepeatedWord(input3);
 
-            Console.WriteLine("Age of John: " + hashtable.GetHash("John")); 
+            Console.WriteLine("Input 1: " + input1);
+            Console.WriteLine("First Repeated Word in Input 1: " + repeatedWord1);
 
-            Console.WriteLine("Keys in the hashtable:");
-            foreach (var key in hashtable.Keys())
-            {
-                Console.WriteLine(key);
-            }
+            Console.WriteLine("Input 2: " + input2);
+            Console.WriteLine("First Repeated Word in Input 2: " + repeatedWord2);
 
-            Console.WriteLine("Hash code for 'Alice': " + hashtable.Hash("Alice")); 
+            Console.WriteLine("Input 3: " + input3);
+            Console.WriteLine("First Repeated Word in Input 3: " + repeatedWord3);
+            //var hashtable = new Hashtable<string, int>(10);
+
+            //hashtable.Set("John", 30);
+            //hashtable.Set("Alice", 25);
+            //hashtable.Set("Bob", 28);
+
+            //Console.WriteLine("Does 'John' exist in the hashtable? " + hashtable.Has("John")); 
+            //Console.WriteLine("Does 'Eve' exist in the hashtable? " + hashtable.Has("Eve"));   
+
+            //Console.WriteLine("Age of John: " + hashtable.GetHash("John")); 
+
+            //Console.WriteLine("Keys in the hashtable:");
+            //foreach (var key in hashtable.Keys())
+            //{
+            //    Console.WriteLine(key);
+            //}
+
+            //Console.WriteLine("Hash code for 'Alice': " + hashtable.Hash("Alice")); 
 
 
-            Console.ReadLine();
+            //Console.ReadLine();
             /*
             int[] array = new int[] {1,2,3,4,5};
             int valuAdded = 7;
