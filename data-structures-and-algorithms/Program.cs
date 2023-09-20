@@ -1,5 +1,6 @@
 ﻿
 using System.Collections;
+using static data_structures_and_algorithms.TreeHashMap;
 
 namespace data_structures_and_algorithms
 {
@@ -7,24 +8,51 @@ namespace data_structures_and_algorithms
     {
         static void Main(string[] args)
         {
-            Hashtable<string, int> customHashTable = new Hashtable<string, int>(100);
 
-            string input1 = "This is a test. This is only a test.";
-            string input2 = "No repeated words in this sentence.";
-            string input3 = "Another test with a repeated word. Test it.";
+            NodeHash root1 = null;
+            root1 = TreeHashMap.insert(root1, 5);
+            root1 = TreeHashMap.insert(root1, 1);
+            root1 = TreeHashMap.insert(root1, 10);
+            root1 = TreeHashMap.insert(root1, 0);
+            root1 = TreeHashMap.insert(root1, 4);
+            root1 = TreeHashMap.insert(root1, 7);
+            root1 = TreeHashMap.insert(root1, 9);
 
-            string repeatedWord1 = customHashTable.FindFirstRepeatedWord(input1);
-            string repeatedWord2 = customHashTable.FindFirstRepeatedWord(input2);
-            string repeatedWord3 = customHashTable.FindFirstRepeatedWord(input3);
+            NodeHash root2 = null;
+            root2 = TreeHashMap.insert(root2, 10);
+            root2 = TreeHashMap.insert(root2, 7);
+            root2 = TreeHashMap.insert(root2, 20);
+            root2 = TreeHashMap.insert(root2, 4);
+            root2 = TreeHashMap.insert(root2, 9);
 
-            Console.WriteLine("Input 1: " + input1);
-            Console.WriteLine("First Repeated Word in Input 1: " + repeatedWord1);
+            Console.Write("Tree 1 : " + "\n");
+            inorder(root1);
+            Console.WriteLine();
+            Console.Write("Tree 2 : " + "\n");
+            inorder(root2);
+            Console.WriteLine();
+            Console.Write("Common Nodes: " + "\n");
 
-            Console.WriteLine("Input 2: " + input2);
-            Console.WriteLine("First Repeated Word in Input 2: " + repeatedWord2);
+            List<int> commonNodes = FindCommonUsingHashMap(root1, root2);
+            PrintList(commonNodes);
+            //Hashtable<string, int> customHashTable = new Hashtable<string, int>(100);
 
-            Console.WriteLine("Input 3: " + input3);
-            Console.WriteLine("First Repeated Word in Input 3: " + repeatedWord3);
+            //string input1 = "This is a test. This is only a test.";
+            //string input2 = "No repeated words in this sentence.";
+            //string input3 = "Another test with a repeated word. Test it.";
+
+            //string repeatedWord1 = customHashTable.FindFirstRepeatedWord(input1);
+            //string repeatedWord2 = customHashTable.FindFirstRepeatedWord(input2);
+            //string repeatedWord3 = customHashTable.FindFirstRepeatedWord(input3);
+
+            //Console.WriteLine("Input 1: " + input1);
+            //Console.WriteLine("First Repeated Word in Input 1: " + repeatedWord1);
+
+            //Console.WriteLine("Input 2: " + input2);
+            //Console.WriteLine("First Repeated Word in Input 2: " + repeatedWord2);
+
+            //Console.WriteLine("Input 3: " + input3);
+            //Console.WriteLine("First Repeated Word in Input 3: " + repeatedWord3);
             //var hashtable = new Hashtable<string, int>(10);
 
             //hashtable.Set("John", 30);
