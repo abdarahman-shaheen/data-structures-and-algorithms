@@ -1,6 +1,6 @@
-﻿﻿# challenge (32) : Tree Intersection
-## explanation
- the code demonstrates the Implemintation of hashMap on two binary trees  find the common  nodes in the tree.
+﻿﻿# challenge (32): Tree Intersection
+## Explanation
+ the code demonstrates the implementation of hashMap on two binary trees  to find the common  nodes in the tree.
 
 
  ![white](HashTree.jpg)
@@ -28,7 +28,7 @@
 7. **PrintList Function**:
    - This function takes a list of integers (`commonNodes`) as input and prints its elements one by one separated by spaces.
 
-8. **inorder Function**:
+8. **in order Function**:
    - This is a utility function that performs an inorder traversal of a BST. It prints the keys of the nodes in sorted order.
 
 9. **Main Function**:
