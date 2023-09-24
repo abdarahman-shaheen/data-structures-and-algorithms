@@ -9,32 +9,57 @@ namespace data_structures_and_algorithms
         static void Main(string[] args)
         {
 
-            NodeHash root1 = null;
-            root1 = TreeHashMap.insert(root1, 5);
-            root1 = TreeHashMap.insert(root1, 1);
-            root1 = TreeHashMap.insert(root1, 10);
-            root1 = TreeHashMap.insert(root1, 0);
-            root1 = TreeHashMap.insert(root1, 4);
-            root1 = TreeHashMap.insert(root1, 7);
-            root1 = TreeHashMap.insert(root1, 9);
+            Dictionary<string, string> synonymsHashTable = new Dictionary<string, string>
+        {
+            { "diligent", "employed" },
+            { "fond", "enamored" },
+            { "guide", "usher" },
+            { "outfit", "garb" },
+            { "wrath", "anger" }
+        };
 
-            NodeHash root2 = null;
-            root2 = TreeHashMap.insert(root2, 10);
-            root2 = TreeHashMap.insert(root2, 7);
-            root2 = TreeHashMap.insert(root2, 20);
-            root2 = TreeHashMap.insert(root2, 4);
-            root2 = TreeHashMap.insert(root2, 9);
+            Dictionary<string, string> antonymsHashTable = new Dictionary<string, string>
+        {
+            { "diligent", "idle" },
+            { "fond", "averse" },
+            { "guide", "follow" },
+            { "flow", "jam" },
+            { "wrath", "delight" }
+        };
 
-            Console.Write("Tree 1 : " + "\n");
-            inorder(root1);
-            Console.WriteLine();
-            Console.Write("Tree 2 : " + "\n");
-            inorder(root2);
-            Console.WriteLine();
-            Console.Write("Common Nodes: " + "\n");
+            List<List<string>> result =Hashtable<string,string>.LeftJoin(synonymsHashTable, antonymsHashTable);
 
-            List<int> commonNodes = FindCommonUsingHashMap(root1, root2);
-            PrintList(commonNodes);
+            Console.WriteLine("Result:");
+            foreach (var row in result)
+            {
+                Console.WriteLine($"[{string.Join(", ", row)}]");
+            }
+            //NodeHash root1 = null;
+            //root1 = TreeHashMap.insert(root1, 5);
+            //root1 = TreeHashMap.insert(root1, 1);
+            //root1 = TreeHashMap.insert(root1, 10);
+            //root1 = TreeHashMap.insert(root1, 0);
+            //root1 = TreeHashMap.insert(root1, 4);
+            //root1 = TreeHashMap.insert(root1, 7);
+            //root1 = TreeHashMap.insert(root1, 9);
+
+            //NodeHash root2 = null;
+            //root2 = TreeHashMap.insert(root2, 10);
+            //root2 = TreeHashMap.insert(root2, 7);
+            //root2 = TreeHashMap.insert(root2, 20);
+            //root2 = TreeHashMap.insert(root2, 4);
+            //root2 = TreeHashMap.insert(root2, 9);
+
+            //Console.Write("Tree 1 : " + "\n");
+            //inorder(root1);
+            //Console.WriteLine();
+            //Console.Write("Tree 2 : " + "\n");
+            //inorder(root2);
+            //Console.WriteLine();
+            //Console.Write("Common Nodes: " + "\n");
+
+            //List<int> commonNodes = FindCommonUsingHashMap(root1, root2);
+            //PrintList(commonNodes);
             //Hashtable<string, int> customHashTable = new Hashtable<string, int>(100);
 
             //string input1 = "This is a test. This is only a test.";

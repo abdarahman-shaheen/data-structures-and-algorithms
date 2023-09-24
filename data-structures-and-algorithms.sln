@@ -31,7 +31,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test-Move-Sort", "Test-Move
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestHashTable", "TestHashTable\TestHashTable.csproj", "{1F5405DA-5488-4447-AFA9-FC865E47B250}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashMapTree", "HashMapTree\HashMapTree.csproj", "{8405F9EE-980E-434B-99D6-D3DF1A658DDD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HashMapTree", "HashMapTree\HashMapTree.csproj", "{8405F9EE-980E-434B-99D6-D3DF1A658DDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashTable-LeftJoin", "HashTable-LeftJoin\HashTable-LeftJoin.csproj", "{A09D2E3D-6615-4025-9279-B59106605BF8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +101,10 @@ Global
 		{8405F9EE-980E-434B-99D6-D3DF1A658DDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8405F9EE-980E-434B-99D6-D3DF1A658DDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8405F9EE-980E-434B-99D6-D3DF1A658DDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A09D2E3D-6615-4025-9279-B59106605BF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A09D2E3D-6615-4025-9279-B59106605BF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A09D2E3D-6615-4025-9279-B59106605BF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A09D2E3D-6615-4025-9279-B59106605BF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

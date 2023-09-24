@@ -184,5 +184,22 @@ namespace data_structures_and_algorithms
             return false;
         }
 
-    }
+
+       
+            public static List<List<string>> LeftJoin(Dictionary<string, string> synonyms, Dictionary<string, string> antonyms)
+            {
+                List<List<string>> result = new List<List<string>>();
+
+                foreach (var key in synonyms.Keys)
+                {
+                    string synonymValue = synonyms[key];
+                    string antonymValue = antonyms.ContainsKey(key) ? antonyms[key] : null;
+
+                    List<string> row = new List<string> { key, synonymValue, antonymValue };
+                    result.Add(row);
+                }
+
+                return result;
+            }
+        }
 }
