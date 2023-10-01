@@ -9,31 +9,57 @@ namespace data_structures_and_algorithms
         static void Main(string[] args)
         {
 
-            Dictionary<string, string> synonymsHashTable = new Dictionary<string, string>
-        {
-            { "diligent", "employed" },
-            { "fond", "enamored" },
-            { "guide", "usher" },
-            { "outfit", "garb" },
-            { "wrath", "anger" }
-        };
+            Graph<string> graph = new Graph<string>();
 
-            Dictionary<string, string> antonymsHashTable = new Dictionary<string, string>
-        {
-            { "diligent", "idle" },
-            { "fond", "averse" },
-            { "guide", "follow" },
-            { "flow", "jam" },
-            { "wrath", "delight" }
-        };
+            Vertex<string> a = graph.AddVertex("New York");
+            Vertex<string> b = graph.AddVertex("Los Angeles");
+            Vertex<string> c = graph.AddVertex("Chicago");
+            Vertex<string> d = graph.AddVertex("San Francisco");
 
-            List<List<string>> result =Hashtable<string,string>.LeftJoin(synonymsHashTable, antonymsHashTable);
+            graph.AddEdge(a, b, 3000);
+            graph.AddEdge(b, c, 2000);
+            graph.AddEdge(c, d, 1800);
+            graph.AddEdge(d, a, 2500);
 
-            Console.WriteLine("Result:");
-            foreach (var row in result)
+            Console.WriteLine("Vertices in the graph:");
+            foreach (var vertex in graph.GetVertices())
             {
-                Console.WriteLine($"[{string.Join(", ", row)}]");
+                Console.WriteLine(vertex.Value);
             }
+
+            Console.WriteLine("\nNeighbors of New York:");
+            var newYorkNeighbors = graph.GetNeighbors(a);
+            foreach (var edge in newYorkNeighbors)
+            {
+                Console.WriteLine($"{edge.Vertex.Value} (Weight: {edge.Weight})");
+            }
+
+            Console.WriteLine("\nSize of the graph: " + graph.Size());
+            //    Dictionary<string, string> synonymsHashTable = new Dictionary<string, string>
+            //{
+            //    { "diligent", "employed" },
+            //    { "fond", "enamored" },
+            //    { "guide", "usher" },
+            //    { "outfit", "garb" },
+            //    { "wrath", "anger" }
+            //};
+
+            //    Dictionary<string, string> antonymsHashTable = new Dictionary<string, string>
+            //{
+            //    { "diligent", "idle" },
+            //    { "fond", "averse" },
+            //    { "guide", "follow" },
+            //    { "flow", "jam" },
+            //    { "wrath", "delight" }
+            //};
+
+            //    List<List<string>> result =Hashtable<string,string>.LeftJoin(synonymsHashTable, antonymsHashTable);
+
+            //    Console.WriteLine("Result:");
+            //    foreach (var row in result)
+            //    {
+            //        Console.WriteLine($"[{string.Join(", ", row)}]");
+            //    }
             //NodeHash root1 = null;
             //root1 = TreeHashMap.insert(root1, 5);
             //root1 = TreeHashMap.insert(root1, 1);
