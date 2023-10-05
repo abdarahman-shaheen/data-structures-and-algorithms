@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace data_structures_and_algorithms
 {
@@ -97,6 +98,35 @@ namespace data_structures_and_algorithms
 
                 Console.WriteLine();
             }
+        }
+        public ICollection<Vertex<T>> BreadthFirstTraversal(Vertex<T> startVertex)
+        {
+            if (!AdjacencyList.ContainsKey(startVertex))
+                throw new InvalidOperationException("Start vertex is not in the graph.");
+
+            List<Vertex<T>> visitedNodes = new List<Vertex<T>>();
+            Queue<Vertex<T>> queue = new Queue<Vertex<T>>();
+            HashSet<Vertex<T>> visited = new HashSet<Vertex<T>>();
+
+            queue.Enqueue(startVertex);
+            visited.Add(startVertex);
+
+            while (queue.Count > 0)
+            {
+                var currentVertex = queue.Dequeue();
+                visitedNodes.Add(currentVertex);
+
+                foreach (var edge in AdjacencyList[currentVertex])
+                {
+                    if (!visited.Contains(edge.Vertex))
+                    {
+                        visited.Add(edge.Vertex);
+                        queue.Enqueue(edge.Vertex);
+                    }
+                }
+            }
+
+            return visitedNodes;
         }
     }
 }
