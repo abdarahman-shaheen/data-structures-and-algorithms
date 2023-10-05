@@ -164,3 +164,7 @@ Implementation Graph.
 Feature Tasks
 Implement a breadth-first traversal on a graph.
 
+## 18. [Challenge25 (Graph-Trip)](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-27/README.md)
+Feature Tasks
+Implement a graph-trip.
+
