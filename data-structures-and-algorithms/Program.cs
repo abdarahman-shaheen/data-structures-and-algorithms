@@ -8,7 +8,6 @@ namespace data_structures_and_algorithms
     {
         static void Main(string[] args)
         {
-
             Graph<string> graph = new Graph<string>();
 
             Vertex<string> a = graph.AddVertex("New York");
@@ -33,6 +32,42 @@ namespace data_structures_and_algorithms
             {
                 Console.WriteLine($"{edge.Vertex.Value} (Weight: {edge.Weight})");
             }
+
+            Console.WriteLine("\nSize of the graph: " + graph.Size());
+
+
+            Console.WriteLine("Breadth-First Traversal:");
+            var bfsOrder = graph.BreadthFirstTraversal(d);
+            foreach (var vertex in bfsOrder)
+            {
+                Console.Write($"{vertex.Value} ");
+            }
+            Console.WriteLine();
+
+            //Graph<string> graph = new Graph<string>();
+
+            //Vertex<string> a = graph.AddVertex("New York");
+            //Vertex<string> b = graph.AddVertex("Los Angeles");
+            //Vertex<string> c = graph.AddVertex("Chicago");
+            //Vertex<string> d = graph.AddVertex("San Francisco");
+
+            //graph.AddEdge(a, b, 3000);
+            //graph.AddEdge(b, c, 2000);
+            //graph.AddEdge(c, d, 1800);
+            //graph.AddEdge(d, a, 2500);
+
+            //Console.WriteLine("Vertices in the graph:");
+            //foreach (var vertex in graph.GetVertices())
+            //{
+            //    Console.WriteLine(vertex.Value);
+            //}
+
+            //Console.WriteLine("\nNeighbors of New York:");
+            //var newYorkNeighbors = graph.GetNeighbors(a);
+            //foreach (var edge in newYorkNeighbors)
+            //{
+            //    Console.WriteLine($"{edge.Vertex.Value} (Weight: {edge.Weight})");
+            //}
 
             Console.WriteLine("\nSize of the graph: " + graph.Size());
             //    Dictionary<string, string> synonymsHashTable = new Dictionary<string, string>
