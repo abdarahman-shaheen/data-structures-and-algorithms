@@ -3,7 +3,7 @@
 Implement a breadth-first traversal on a graph.
 
 
- ![white](Graph-breadth.jpg)
+![white](Graph-breadth.jpg)
 
 ## Algorithm
 # Graph-breadth-first Implementation

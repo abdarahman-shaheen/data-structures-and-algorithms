@@ -128,5 +128,59 @@ namespace data_structures_and_algorithms
 
             return visitedNodes;
         }
+        public static int? BusinessTrip(Graph<string> graph, string[] cityNames)
+        {
+            if (cityNames.Length < 2)
+            {
+                return null;
+            }
+
+            int totalCost = 0;
+
+            for (int i = 0; i < cityNames.Length - 1; i++)
+            {
+                string fromCity = cityNames[i];
+                string toCity = cityNames[i + 1];
+
+                Vertex<string> fromVertex = null;
+                Vertex<string> toVertex = null;
+
+
+                foreach (var vertex in graph.GetVertices())
+                {
+                    if (vertex.Value == fromCity)
+                    {
+                        fromVertex = vertex;
+                    }
+                    if (vertex.Value == toCity)
+                    {
+                        toVertex = vertex;
+                    }
+                }
+
+                if (fromVertex == null || toVertex == null)
+                {
+                    return null;
+                }
+
+                Edge<string> edge = null;
+                foreach (var neighborEdge in graph.GetNeighbors(fromVertex))
+                {
+                    if (neighborEdge.Vertex == toVertex)
+                    {
+                        edge = neighborEdge;
+                    }
+                }
+
+                if (edge == null)
+                {
+                    return null;
+                }
+
+                totalCost += edge.Weight;
+            }
+
+            return totalCost;
+        }
     }
 }
