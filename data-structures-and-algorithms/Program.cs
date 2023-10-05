@@ -8,41 +8,79 @@ namespace data_structures_and_algorithms
     {
         static void Main(string[] args)
         {
+
             Graph<string> graph = new Graph<string>();
 
-            Vertex<string> a = graph.AddVertex("New York");
-            Vertex<string> b = graph.AddVertex("Los Angeles");
-            Vertex<string> c = graph.AddVertex("Chicago");
-            Vertex<string> d = graph.AddVertex("San Francisco");
+            Vertex<string> pandora = graph.AddVertex("Pandora");
+            Vertex<string> arendelle = graph.AddVertex("Arendelle");
+            Vertex<string> metroville = graph.AddVertex("Metroville");
+            Vertex<string> monstropolis = graph.AddVertex("New Monstropolis");
+            Vertex<string> naboo = graph.AddVertex("Naboo");
+            Vertex<string> narnia = graph.AddVertex("Narnia");
 
-            graph.AddEdge(a, b, 3000);
-            graph.AddEdge(b, c, 2000);
-            graph.AddEdge(c, d, 1800);
-            graph.AddEdge(d, a, 2500);
+            graph.AddEdge(pandora, arendelle, 150);
+            graph.AddEdge(pandora, metroville, 82);
+            graph.AddEdge(arendelle, metroville, 99);
+            graph.AddEdge(arendelle, monstropolis, 42);
+            graph.AddEdge(monstropolis, metroville, 105);
+            graph.AddEdge(monstropolis, naboo, 73);
+            graph.AddEdge(metroville, naboo, 26);
+            graph.AddEdge(naboo, narnia, 250);
+            graph.AddEdge(narnia, metroville, 37);
 
-            Console.WriteLine("Vertices in the graph:");
-            foreach (var vertex in graph.GetVertices())
-            {
-                Console.WriteLine(vertex.Value);
-            }
+            // ... (previous code)
 
-            Console.WriteLine("\nNeighbors of New York:");
-            var newYorkNeighbors = graph.GetNeighbors(a);
-            foreach (var edge in newYorkNeighbors)
-            {
-                Console.WriteLine($"{edge.Vertex.Value} (Weight: {edge.Weight})");
-            }
+            // Inputs and Outputs
+            string[] input1 = { "Metroville", "Pandora" };
+            int? cost1 = Graph<string>.BusinessTrip(graph, input1);
+            Console.WriteLine($"Cost of trip 1: ${cost1}");
 
-            Console.WriteLine("\nSize of the graph: " + graph.Size());
+            string[] input2 = { "Arendelle", "New Monstropolis", "Naboo" };
+            int? cost2 = Graph<string>.BusinessTrip(graph, input2);
+            Console.WriteLine($"Cost of trip 2: ${cost2}");
+
+            string[] input3 = { "Naboo", "Pandora" };
+            int? cost3 = Graph<string>.BusinessTrip(graph, input3);
+            Console.WriteLine($"Cost of trip 3: {cost3}");
+
+            string[] input4 = { "Narnia", "Arendelle", "Naboo" };
+            int? cost4 = Graph<string>.BusinessTrip(graph, input4);
+            Console.WriteLine($"Cost of trip 4: {cost4}");
+            //    Graph<string> graph = new Graph<string>();
+
+            //    Vertex<string> a = graph.AddVertex("New York");
+            //    Vertex<string> b = graph.AddVertex("Los Angeles");
+            //    Vertex<string> c = graph.AddVertex("Chicago");
+            //    Vertex<string> d = graph.AddVertex("San Francisco");
+
+            //    graph.AddEdge(a, b, 3000);
+            //    graph.AddEdge(b, c, 2000);
+            //    graph.AddEdge(c, d, 1800);
+            //    graph.AddEdge(d, a, 2500);
+
+            //    Console.WriteLine("Vertices in the graph:");
+            //    foreach (var vertex in graph.GetVertices())
+            //    {
+            //        Console.WriteLine(vertex.Value);
+            //    }
+
+            //    Console.WriteLine("\nNeighbors of New York:");
+            //    var newYorkNeighbors = graph.GetNeighbors(a);
+            //    foreach (var edge in newYorkNeighbors)
+            //    {
+            //        Console.WriteLine($"{edge.Vertex.Value} (Weight: {edge.Weight})");
+            //    }
+
+            //    Console.WriteLine("\nSize of the graph: " + graph.Size());
 
 
-            Console.WriteLine("Breadth-First Traversal:");
-            var bfsOrder = graph.BreadthFirstTraversal(d);
-            foreach (var vertex in bfsOrder)
-            {
-                Console.Write($"{vertex.Value} ");
-            }
-            Console.WriteLine();
+            //    Console.WriteLine("Breadth-First Traversal:");
+            //    var bfsOrder = graph.BreadthFirstTraversal(d);
+            //    foreach (var vertex in bfsOrder)
+            //    {
+            //        Console.Write($"{vertex.Value} ");
+            //    }
+            //    Console.WriteLine();
 
             //Graph<string> graph = new Graph<string>();
 
