@@ -168,5 +168,9 @@ Implement a breadth-first traversal on a graph.
 Feature Tasks
 Implement a graph-trip.
 
-## 19. [Challenge26 (Graph-Trip)](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-28/README.md)
+## 19. [Challenge26 (Graph-Depth)](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-28/README.md)
+Feature Tasks
+
+Conduct a depth first pre-order traversal on a graph
+
 
