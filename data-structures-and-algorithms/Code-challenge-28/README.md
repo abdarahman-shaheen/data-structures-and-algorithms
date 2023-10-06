@@ -19,5 +19,5 @@ The Depth First Traversal algorithm implemented in the `DepthFirst` method follo
 
 4. After traversal, return the `result` list containing the nodes in their pre-order depth-first traversal order.
 
- ![test](Test-graph-Depth.png)
+ ![test](Test-Graph-Depth.png)
 ## test:
