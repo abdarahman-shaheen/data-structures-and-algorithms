@@ -8,44 +8,70 @@ namespace data_structures_and_algorithms
     {
         static void Main(string[] args)
         {
+            Graph<char> graph = new Graph<char>();
 
-            Graph<string> graph = new Graph<string>();
+            var A = graph.AddVertex('A');
+            var B = graph.AddVertex('B');
+            var C = graph.AddVertex('C');
+            var D = graph.AddVertex('D');
+            var E = graph.AddVertex('E');
+            var F = graph.AddVertex('F');
+            var G = graph.AddVertex('G');
+            var H = graph.AddVertex('H');
 
-            Vertex<string> pandora = graph.AddVertex("Pandora");
-            Vertex<string> arendelle = graph.AddVertex("Arendelle");
-            Vertex<string> metroville = graph.AddVertex("Metroville");
-            Vertex<string> monstropolis = graph.AddVertex("New Monstropolis");
-            Vertex<string> naboo = graph.AddVertex("Naboo");
-            Vertex<string> narnia = graph.AddVertex("Narnia");
+            graph.AddEdge(A, B);
+            graph.AddEdge(B, C);
+            graph.AddEdge(B, D);
+            graph.AddEdge(C, G);
+            graph.AddEdge(D, E);
+            graph.AddEdge(D, H);
+            graph.AddEdge(D, F);
+            graph.AddEdge(E, H);
 
-            graph.AddEdge(pandora, arendelle, 150);
-            graph.AddEdge(pandora, metroville, 82);
-            graph.AddEdge(arendelle, metroville, 99);
-            graph.AddEdge(arendelle, monstropolis, 42);
-            graph.AddEdge(monstropolis, metroville, 105);
-            graph.AddEdge(monstropolis, naboo, 73);
-            graph.AddEdge(metroville, naboo, 26);
-            graph.AddEdge(naboo, narnia, 250);
-            graph.AddEdge(narnia, metroville, 37);
+            Console.WriteLine("Depth-First Traversal:");
+            var traversalOrder = graph.DepthFirst(A);
+            foreach (var traversal in traversalOrder)
+            {
+                Console.Write($"{traversal.Value},");
+            }
 
-            // ... (previous code)
+            //Graph<string> graph = new Graph<string>();
 
-            // Inputs and Outputs
-            string[] input1 = { "Metroville", "Pandora" };
-            int? cost1 = Graph<string>.BusinessTrip(graph, input1);
-            Console.WriteLine($"Cost of trip 1: ${cost1}");
+            //Vertex<string> pandora = graph.AddVertex("Pandora");
+            //Vertex<string> arendelle = graph.AddVertex("Arendelle");
+            //Vertex<string> metroville = graph.AddVertex("Metroville");
+            //Vertex<string> monstropolis = graph.AddVertex("New Monstropolis");
+            //Vertex<string> naboo = graph.AddVertex("Naboo");
+            //Vertex<string> narnia = graph.AddVertex("Narnia");
 
-            string[] input2 = { "Arendelle", "New Monstropolis", "Naboo" };
-            int? cost2 = Graph<string>.BusinessTrip(graph, input2);
-            Console.WriteLine($"Cost of trip 2: ${cost2}");
+            //graph.AddEdge(pandora, arendelle, 150);
+            //graph.AddEdge(pandora, metroville, 82);
+            //graph.AddEdge(arendelle, metroville, 99);
+            //graph.AddEdge(arendelle, monstropolis, 42);
+            //graph.AddEdge(monstropolis, metroville, 105);
+            //graph.AddEdge(monstropolis, naboo, 73);
+            //graph.AddEdge(metroville, naboo, 26);
+            //graph.AddEdge(naboo, narnia, 250);
+            //graph.AddEdge(narnia, metroville, 37);
 
-            string[] input3 = { "Naboo", "Pandora" };
-            int? cost3 = Graph<string>.BusinessTrip(graph, input3);
-            Console.WriteLine($"Cost of trip 3: {cost3}");
+            //// ... (previous code)
 
-            string[] input4 = { "Narnia", "Arendelle", "Naboo" };
-            int? cost4 = Graph<string>.BusinessTrip(graph, input4);
-            Console.WriteLine($"Cost of trip 4: {cost4}");
+            //// Inputs and Outputs
+            //string[] input1 = { "Metroville", "Pandora" };
+            //int? cost1 = Graph<string>.BusinessTrip(graph, input1);
+            //Console.WriteLine($"Cost of trip 1: ${cost1}");
+
+            //string[] input2 = { "Arendelle", "New Monstropolis", "Naboo" };
+            //int? cost2 = Graph<string>.BusinessTrip(graph, input2);
+            //Console.WriteLine($"Cost of trip 2: ${cost2}");
+
+            //string[] input3 = { "Naboo", "Pandora" };
+            //int? cost3 = Graph<string>.BusinessTrip(graph, input3);
+            //Console.WriteLine($"Cost of trip 3: {cost3}");
+
+            //string[] input4 = { "Narnia", "Arendelle", "Naboo" };
+            //int? cost4 = Graph<string>.BusinessTrip(graph, input4);
+            //Console.WriteLine($"Cost of trip 4: {cost4}");
             //    Graph<string> graph = new Graph<string>();
 
             //    Vertex<string> a = graph.AddVertex("New York");
