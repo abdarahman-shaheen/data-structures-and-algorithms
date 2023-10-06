@@ -160,7 +160,7 @@ Find common values in 2 binary trees.
 Feature Tasks
 Implementation Graph.
 
-## 17. [Challenge24 (Graph-breadth)](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-26/README.md)
+## 17. [Challenge24 (Graph-breadth)](https://github.com/abdarahman-shaheen/data-structures-and-algorithms/blob/master/data-structures-and-algorithms/Code-challenge-28/README.md)
 Feature Tasks
 Implement a breadth-first traversal on a graph.
 
