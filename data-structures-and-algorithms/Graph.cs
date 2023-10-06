@@ -182,5 +182,31 @@ namespace data_structures_and_algorithms
 
             return totalCost;
         }
+        public List<Vertex<T>> DepthFirst(Vertex<T> startNode)
+        {
+            List<Vertex<T>> result = new List<Vertex<T>>();
+            HashSet<Vertex<T>> visited = new HashSet<Vertex<T>>();
+
+            DepthFirstRecursive(startNode, visited, result);
+
+
+
+            return result;
+        }
+
+        private void DepthFirstRecursive(Vertex<T> current, HashSet<Vertex<T>> visited, List<Vertex<T>> result)
+        {
+            if (current == null || visited.Contains(current))
+                return;
+
+            visited.Add(current);
+            result.Add(current);
+
+            List<Edge<T>> neighbors = GetNeighbors(current);
+            foreach (var neighbor in neighbors)
+            {
+                DepthFirstRecursive(neighbor.Vertex, visited, result);
+            }
+        }
     }
 }
